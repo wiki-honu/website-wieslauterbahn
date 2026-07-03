@@ -1113,6 +1113,16 @@ body {
   cursor:pointer
 }
 
+.gallery-trigger.press-scan-thumb {
+  width:100%
+}
+
+@media (min-width: 640px) {
+  .gallery-trigger.press-scan-thumb {
+    width:12rem
+  }
+}
+
 .lightbox {
   position:fixed;
   inset:0;
