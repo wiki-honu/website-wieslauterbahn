@@ -165,5 +165,15 @@ var WLB_PRESSE = [
       "Zeitgemäße Kriterien für die Reaktivierung von Bahnstrecken hingegen würden, so sind die Südpfälzer Verwaltungschefs überzeugt, unter anderem den Nutzen positiver Umwelt- und Klimaeffekte infolge umweltfreundlicher Verkehrskonzepte und weitere Aspekte ausreichend berücksichtigen. Damit stünde mehr auf der Nutzen- als auf der Kostenseite und die Reaktivierung könnte angepackt werden."
     ],
     scanHinweis: "Hinweis: Automatisierte Abschrift aus dem Zeitungsscan, vom Verein noch nicht redaktionell gegengeprüft."
+  },
+  {
+    datum: "27.07.2013",
+    kategorie: "Archiv · Presseecho",
+    titel: "SWR Eisenbahn-Romantik: „Zwischen Jungfernsprung und Drachenfels – die Renaissance des Bundenthalers“",
+    teaser: "Der SWR begleitet in einer Fernsehreportage eine Zugfahrt mit dem „Bundenthaler“ durchs Dahner Felsenland, vorbei an Felsen mit klingenden Namen wie Jungfernsprung und Hexenpilz.",
+    bild: null,
+    bildAlt: "",
+    quelleName: "SWR Fernsehen – Eisenbahn-Romantik",
+    quelleUrl: "https://www.swr.de/video/sendungen-a-z/eisenbahn-romantik/folgen/broadcastcontrib-swr-36164.html"
   }
 ];
