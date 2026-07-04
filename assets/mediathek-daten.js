@@ -40,6 +40,14 @@
  *   eintragen (Reihenfolge dort = Reihenfolge der Filter-Knöpfe auf der Seite,
  *   der Knopf "Alle" wird automatisch zusätzlich vorangestellt).
  *
+ * VORSCHAUBILD (THUMBNAIL) FÜRS NEUE FOTO — OPTIONAL, NICHT NÖTIG:
+ *   Für eine schnellere Ladezeit zeigt die Kachel-Übersicht ein kleines,
+ *   separates Vorschaubild unter assets/bilder/thumbs/<gleicher Dateiname>
+ *   (falls vorhanden). Legst du dort keins ab, wird in der Übersicht einfach
+ *   automatisch das normale Originalbild geladen — nichts geht kaputt, es ist
+ *   nur ein klein wenig langsamer. Die Vergrößerung (Lightbox) nutzt so oder
+ *   so immer das Originalbild.
+ *
  * WICHTIG BEI ZWEI DESIGN-VARIANTEN:
  *   Diese Datei muss identisch in prototyp/assets/ UND prototyp-rot/assets/
  *   vorliegen (siehe Hinweis in status-daten.js).
