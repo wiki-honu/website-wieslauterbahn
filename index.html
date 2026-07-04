@@ -61,15 +61,17 @@
   </nav>
 </header>
 
-<div class="bg-[#FCEFCB] border-b border-[#E9B44C]/50" role="status">
+<div id="statusBanner" class="bg-[#FCEFCB] border-b border-[#E9B44C]/50" role="status">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center gap-3 text-sm">
-    <span class="inline-flex items-center gap-2 font-semibold text-[#8A5A00]">
-      <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" class="status-dot"/></svg>
-      Status: Eingeschränkter Betrieb
+    <span class="inline-flex items-center gap-2 font-semibold text-[#8A5A00]" id="statusKurzSpan">
+      <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" id="statusDot" class="status-dot"/></svg>
+      <span id="statusKurztext">Status: Eingeschränkter Betrieb</span>
     </span>
-    <span class="text-[#5c4a1f]">Bauarbeiten zwischen Dahn Süd und Bundenthal-Rumbach – Schienenersatzverkehr eingerichtet, gültig bis 04.10.2026.</span>
+    <span class="text-[#5c4a1f]" id="statusLangtext">Bauarbeiten zwischen Dahn Süd und Bundenthal-Rumbach – Schienenersatzverkehr eingerichtet, gültig bis 04.10.2026.</span>
   </div>
 </div>
+<script src="assets/status-daten.js"></script>
+<script src="assets/status-render.js"></script>
 
 <main id="main">
 
@@ -136,31 +138,8 @@
         <h2 class="font-serif-brand text-2xl sm:text-3xl font-semibold">Presse &amp; Aktuelles</h2>
         <a href="presse.html" class="text-sm font-semibold text-[#1F3A2E] underline underline-offset-2">Alle Meldungen →</a>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-          <img src="assets/news1.jpg" alt="" loading="lazy" class="w-full h-44 object-cover">
-          <div class="p-5">
-            <p class="text-xs text-[#8A5A00] font-semibold uppercase tracking-wide mb-1">Betrieb · 18.06.2026</p>
-            <h3 class="font-semibold leading-snug mb-2">Wieslauterbahn geht am 27. Juni wieder in Betrieb</h3>
-            <p class="text-sm text-[#5b6b5f]">Die Saison 2026 startet – wir informieren, ab wann und auf welchem Abschnitt gefahren wird.</p>
-          </div>
-        </article>
-        <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-          <img src="assets/news2.jpg" alt="" loading="lazy" class="w-full h-44 object-cover">
-          <div class="p-5">
-            <p class="text-xs text-[#8A5A00] font-semibold uppercase tracking-wide mb-1">Sanierung · 18.06.2026</p>
-            <h3 class="font-semibold leading-snug mb-2">Warum die Bahn erst mal nicht bis zur Endstation fährt</h3>
-            <p class="text-sm text-[#5b6b5f]">Bauarbeiten sorgen für eingeschränkten Betrieb – Details zum Schienenersatzverkehr.</p>
-          </div>
-        </article>
-        <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-          <img src="assets/news3.jpg" alt="" loading="lazy" class="w-full h-44 object-cover">
-          <div class="p-5">
-            <p class="text-xs text-[#8A5A00] font-semibold uppercase tracking-wide mb-1">Sanierung · 20.03.2025</p>
-            <h3 class="font-semibold leading-snug mb-2">Sanierung der Wieslauterbahn in der Südwestpfalz beginnt</h3>
-            <p class="text-sm text-[#5b6b5f]">Startschuss für die lang erwartete Streckensanierung – ein Überblick über Umfang und Dauer.</p>
-          </div>
-        </article>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="presseIndexListe">
+        <!-- Wird automatisch aus assets/presse-daten.js befüllt (die 3 neuesten Meldungen), siehe presse-render.js. -->
       </div>
     </div>
   </section>
@@ -247,6 +226,8 @@
   </div>
 </footer>
 
+<script src="assets/presse-daten.js"></script>
+<script src="assets/presse-render.js"></script>
 <script src="assets/fahrplan-daten.js"></script>
 <script>
   var menuBtn = document.getElementById('menuBtn');
@@ -259,8 +240,15 @@
     });
   }
 
+  // Berechnet/aktualisiert die Box "Nächste Abfahrten". Wird einmal beim Laden
+  // der Seite ausgeführt und danach automatisch alle 60 Sekunden wiederholt --
+  // sonst bliebe die Anzeige auf dem Stand des Seitenaufrufs "eingefroren" und
+  // würde falsch, sobald die zuerst berechnete Abfahrt längst vorbei ist
+  // (z. B. wenn die Seite morgens geöffnet und den ganzen Tag über nicht neu
+  // geladen wird).
   var abfahrtenListe = document.querySelectorAll('#naechsteAbfahrten li[data-von]');
-  if (abfahrtenListe.length && window.WLB_FAHRPLAN) {
+  function renderNaechsteAbfahrten() {
+    if (!abfahrtenListe.length || !window.WLB_FAHRPLAN) return;
     var jetzt = new Date();
     abfahrtenListe.forEach(function (li) {
       var von = li.getAttribute('data-von');
@@ -277,6 +265,8 @@
       if (zeitEl) zeitEl.textContent = ergebnis.zeit + ' Uhr';
     });
   }
+  renderNaechsteAbfahrten();
+  setInterval(renderNaechsteAbfahrten, 60000);
 </script>
 
 </body>

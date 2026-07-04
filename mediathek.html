@@ -61,15 +61,17 @@
   </nav>
 </header>
 
-<div class="bg-[#FCEFCB] border-b border-[#E9B44C]/50" role="status">
+<div id="statusBanner" class="bg-[#FCEFCB] border-b border-[#E9B44C]/50" role="status">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center gap-3 text-sm">
-    <span class="inline-flex items-center gap-2 font-semibold text-[#8A5A00]">
-      <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" class="status-dot"/></svg>
-      Status: Eingeschränkter Betrieb
+    <span class="inline-flex items-center gap-2 font-semibold text-[#8A5A00]" id="statusKurzSpan">
+      <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" id="statusDot" class="status-dot"/></svg>
+      <span id="statusKurztext">Status: Eingeschränkter Betrieb</span>
     </span>
-    <span class="text-[#5c4a1f]">Bauarbeiten zwischen Dahn Süd und Bundenthal-Rumbach – Schienenersatzverkehr eingerichtet, gültig bis 04.10.2026.</span>
+    <span class="text-[#5c4a1f]" id="statusLangtext">Bauarbeiten zwischen Dahn Süd und Bundenthal-Rumbach – Schienenersatzverkehr eingerichtet, gültig bis 04.10.2026.</span>
   </div>
 </div>
+<script src="assets/status-daten.js"></script>
+<script src="assets/status-render.js"></script>
 
 <main id="main">
 
@@ -81,178 +83,32 @@
       Im echten CMS werden alle bestehenden Jahresordner (1911–1945 bis 2017) vollständig migriert.
     </p>
 
-    <div class="flex flex-wrap gap-2 mb-10" role="group" aria-label="Nach Jahr filtern">
-      <button data-year="Alle" class="year-filter px-4 py-1.5 rounded-full border border-[#D9CFB8] text-sm hover:border-[#1F3A2E] transition-colors">Alle</button>
-        <button data-year="2026" class="year-filter px-4 py-1.5 rounded-full border border-[#D9CFB8] text-sm hover:border-[#1F3A2E] transition-colors">2026</button>
-        <button data-year="2025" class="year-filter px-4 py-1.5 rounded-full border border-[#D9CFB8] text-sm hover:border-[#1F3A2E] transition-colors">2025</button>
-        <button data-year="2016" class="year-filter px-4 py-1.5 rounded-full border border-[#D9CFB8] text-sm hover:border-[#1F3A2E] transition-colors">2016</button>
-        <button data-year="2014-2016" class="year-filter px-4 py-1.5 rounded-full border border-[#D9CFB8] text-sm hover:border-[#1F3A2E] transition-colors">2014-2016</button>
-        <button data-year="2011" class="year-filter px-4 py-1.5 rounded-full border border-[#D9CFB8] text-sm hover:border-[#1F3A2E] transition-colors">2011</button>
-        <button data-year="2000-2009" class="year-filter px-4 py-1.5 rounded-full border border-[#D9CFB8] text-sm hover:border-[#1F3A2E] transition-colors">2000-2009</button>
-        <button data-year="1990-1999" class="year-filter px-4 py-1.5 rounded-full border border-[#D9CFB8] text-sm hover:border-[#1F3A2E] transition-colors">1990-1999</button>
-        <button data-year="1911-1945" class="year-filter px-4 py-1.5 rounded-full border border-[#D9CFB8] text-sm hover:border-[#1F3A2E] transition-colors">1911-1945</button>
+    <div class="flex flex-wrap gap-2 mb-10" role="group" aria-label="Nach Jahr filtern" id="yearFilters">
+      <!-- Wird automatisch aus assets/mediathek-daten.js befüllt (siehe mediathek-render.js). -->
     </div>
 
     <div id="gallery" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white" data-year="2026">
-        <button type="button" class="gallery-trigger" data-full="assets/fotomonat.jpg" data-caption="Die Hybridlok Siemens Vectron 248 011 am HP Moosbachtal" data-date="24.06.2022" aria-label="Foto vergrößern: Die Hybridlok Siemens Vectron 248 011 am HP Moosbachtal">
-          <img src="assets/fotomonat.jpg" alt="Die Hybridlok Siemens Vectron 248 011 am HP Moosbachtal" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Die Hybridlok Siemens Vectron 248 011 am HP Moosbachtal</p>
-          <p class="text-xs text-[#6b7a6e] mt-1">24.06.2022</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white" data-year="2026">
-        <button type="button" class="gallery-trigger" data-full="assets/news1.jpg" data-caption="Bahnübergang bei Bruchweiler" data-date="2026" aria-label="Foto vergrößern: Bahnübergang bei Bruchweiler">
-          <img src="assets/news1.jpg" alt="Bahnübergang bei Bruchweiler" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Bahnübergang bei Bruchweiler</p>
-          <p class="text-xs text-[#6b7a6e] mt-1">2026</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white" data-year="2016">
-        <button type="button" class="gallery-trigger" data-full="assets/news2.jpg" data-caption="Fahrgäste steigen in Dahn Süd zu" data-date="20.07.2016" aria-label="Foto vergrößern: Fahrgäste steigen in Dahn Süd zu">
-          <img src="assets/news2.jpg" alt="Fahrgäste steigen in Dahn Süd zu" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Fahrgäste steigen in Dahn Süd zu</p>
-          <p class="text-xs text-[#6b7a6e] mt-1">20.07.2016</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white" data-year="2025">
-        <button type="button" class="gallery-trigger" data-full="assets/news3.jpg" data-caption="Wintereinsatz bei Schneefall" data-date="20.03.2025" aria-label="Foto vergrößern: Wintereinsatz bei Schneefall">
-          <img src="assets/news3.jpg" alt="Wintereinsatz bei Schneefall" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Wintereinsatz bei Schneefall</p>
-          <p class="text-xs text-[#6b7a6e] mt-1">20.03.2025</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white" data-year="2011">
-        <button type="button" class="gallery-trigger" data-full="assets/hero.jpg" data-caption="Herbstliche Vorbeifahrt am Bahnhof Dahn Süd" data-date="2011 (100 Jahre WLB)" aria-label="Foto vergrößern: Herbstliche Vorbeifahrt am Bahnhof Dahn Süd">
-          <img src="assets/hero.jpg" alt="Herbstliche Vorbeifahrt am Bahnhof Dahn Süd" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Herbstliche Vorbeifahrt am Bahnhof Dahn Süd</p>
-          <p class="text-xs text-[#6b7a6e] mt-1">2011 (100 Jahre WLB)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white" data-year="2000-2009">
-        <button type="button" class="gallery-trigger" data-full="assets/strecke.jpg" data-caption="Durchfahrt durch den Pfälzerwald" data-date="2000–2009" aria-label="Foto vergrößern: Durchfahrt durch den Pfälzerwald">
-          <img src="assets/strecke.jpg" alt="Durchfahrt durch den Pfälzerwald" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Durchfahrt durch den Pfälzerwald</p>
-          <p class="text-xs text-[#6b7a6e] mt-1">2000–2009</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white" data-year="1990-1999">
-        <button type="button" class="gallery-trigger" data-full="assets/stationen.jpg" data-caption="Der Bundenthaler am Bahnübergang" data-date="1990–1999" aria-label="Foto vergrößern: Der Bundenthaler am Bahnübergang">
-          <img src="assets/stationen.jpg" alt="Der Bundenthaler am Bahnübergang" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Der Bundenthaler am Bahnübergang</p>
-          <p class="text-xs text-[#6b7a6e] mt-1">1990–1999</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white" data-year="1990-1999">
-        <button type="button" class="gallery-trigger" data-full="assets/winter.jpg" data-caption="Sonderzug im Schnee vor der Dorfkirche" data-date="1990–1999" aria-label="Foto vergrößern: Sonderzug im Schnee vor der Dorfkirche">
-          <img src="assets/winter.jpg" alt="Sonderzug im Schnee vor der Dorfkirche" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Sonderzug im Schnee vor der Dorfkirche</p>
-          <p class="text-xs text-[#6b7a6e] mt-1">1990–1999</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white" data-year="2014-2016">
-        <button type="button" class="gallery-trigger" data-full="assets/archiv-2014.jpg" data-caption="Vorbeifahrt an den Dahner Burgen" data-date="30.07.2014" aria-label="Foto vergrößern: Vorbeifahrt an den Dahner Burgen">
-          <img src="assets/archiv-2014.jpg" alt="Vorbeifahrt an den Dahner Burgen" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Vorbeifahrt an den Dahner Burgen</p>
-          <p class="text-xs text-[#6b7a6e] mt-1">30.07.2014</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white" data-year="1911-1945">
-        <button type="button" class="gallery-trigger" data-full="assets/geschichte.jpg" data-caption="Der klassische Triebwagen vor den Sandsteinfelsen" data-date="Archivaufnahme" aria-label="Foto vergrößern: Der klassische Triebwagen vor den Sandsteinfelsen">
-          <img src="assets/geschichte.jpg" alt="Der klassische Triebwagen vor den Sandsteinfelsen" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Der klassische Triebwagen vor den Sandsteinfelsen</p>
-          <p class="text-xs text-[#6b7a6e] mt-1">Archivaufnahme</p>
-        </figcaption>
-      </figure>
+      <!-- Wird automatisch aus assets/mediathek-daten.js befüllt (siehe mediathek-render.js). -->
     </div>
 
     <div id="lightbox" class="lightbox" hidden>
       <div class="lightbox-backdrop" data-lightbox-close></div>
       <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
         <button type="button" class="lightbox-close" data-lightbox-close aria-label="Bildansicht schließen">✕</button>
-        <img id="lightboxImg" alt="" class="lightbox-img">
+        <div class="lightbox-image-wrap">
+          <button type="button" class="lightbox-prev" id="lightboxPrev" aria-label="Vorheriges Bild" hidden>‹</button>
+          <img id="lightboxImg" alt="" class="lightbox-img">
+          <button type="button" class="lightbox-next" id="lightboxNext" aria-label="Nächstes Bild" hidden>›</button>
+        </div>
         <p id="lightboxCaption" class="lightbox-caption"></p>
+        <p id="lightboxZaehler" class="lightbox-zaehler"></p>
       </div>
     </div>
   </section>
 
-  <script>
-    var lightbox = document.getElementById('lightbox');
-    var lightboxImg = document.getElementById('lightboxImg');
-    var lightboxCaption = document.getElementById('lightboxCaption');
-    var lastTrigger = null;
-
-    function openLightbox(trigger) {
-      lastTrigger = trigger;
-      var caption = trigger.getAttribute('data-caption');
-      var date = trigger.getAttribute('data-date');
-      lightboxImg.src = trigger.getAttribute('data-full');
-      lightboxImg.alt = caption;
-      lightboxCaption.textContent = date ? caption + ' · ' + date : caption;
-      lightbox.hidden = false;
-      lightbox.querySelector('.lightbox-close').focus();
-      document.addEventListener('keydown', onLightboxKeydown);
-    }
-
-    function closeLightbox() {
-      lightbox.hidden = true;
-      document.removeEventListener('keydown', onLightboxKeydown);
-      if (lastTrigger) lastTrigger.focus();
-    }
-
-    function getFocusable(container) {
-      return Array.prototype.slice.call(container.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
-        .filter(function (el) { return !el.disabled && el.offsetParent !== null; });
-    }
-
-    function onLightboxKeydown(e) {
-      if (e.key === 'Escape') {
-        closeLightbox();
-        return;
-      }
-      if (e.key === 'Tab') {
-        var focusable = getFocusable(lightbox.querySelector('.lightbox-dialog'));
-        if (focusable.length === 0) { e.preventDefault(); return; }
-        var first = focusable[0];
-        var last = focusable[focusable.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    }
-
-    document.querySelectorAll('.gallery-trigger').forEach(function (btn) {
-      btn.addEventListener('click', function () { openLightbox(btn); });
-    });
-
-    lightbox.querySelectorAll('[data-lightbox-close]').forEach(function (el) {
-      el.addEventListener('click', closeLightbox);
-    });
-  </script>
+  <script src="assets/galerie-lightbox.js"></script>
+  <script src="assets/mediathek-daten.js"></script>
+  <script src="assets/mediathek-render.js"></script>
 
   <script>
     var buttons = document.querySelectorAll('.year-filter');

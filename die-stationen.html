@@ -61,15 +61,17 @@
   </nav>
 </header>
 
-<div class="bg-[#FCEFCB] border-b border-[#E9B44C]/50" role="status">
+<div id="statusBanner" class="bg-[#FCEFCB] border-b border-[#E9B44C]/50" role="status">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center gap-3 text-sm">
-    <span class="inline-flex items-center gap-2 font-semibold text-[#8A5A00]">
-      <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" class="status-dot"/></svg>
-      Status: Eingeschränkter Betrieb
+    <span class="inline-flex items-center gap-2 font-semibold text-[#8A5A00]" id="statusKurzSpan">
+      <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" id="statusDot" class="status-dot"/></svg>
+      <span id="statusKurztext">Status: Eingeschränkter Betrieb</span>
     </span>
-    <span class="text-[#5c4a1f]">Bauarbeiten zwischen Dahn Süd und Bundenthal-Rumbach – Schienenersatzverkehr eingerichtet, gültig bis 04.10.2026.</span>
+    <span class="text-[#5c4a1f]" id="statusLangtext">Bauarbeiten zwischen Dahn Süd und Bundenthal-Rumbach – Schienenersatzverkehr eingerichtet, gültig bis 04.10.2026.</span>
   </div>
 </div>
+<script src="assets/status-daten.js"></script>
+<script src="assets/status-render.js"></script>
 
 <main id="main">
 

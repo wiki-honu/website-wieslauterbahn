@@ -61,15 +61,17 @@
   </nav>
 </header>
 
-<div class="bg-[#FCEFCB] border-b border-[#E9B44C]/50" role="status">
+<div id="statusBanner" class="bg-[#FCEFCB] border-b border-[#E9B44C]/50" role="status">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center gap-3 text-sm">
-    <span class="inline-flex items-center gap-2 font-semibold text-[#8A5A00]">
-      <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" class="status-dot"/></svg>
-      Status: Eingeschränkter Betrieb
+    <span class="inline-flex items-center gap-2 font-semibold text-[#8A5A00]" id="statusKurzSpan">
+      <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" id="statusDot" class="status-dot"/></svg>
+      <span id="statusKurztext">Status: Eingeschränkter Betrieb</span>
     </span>
-    <span class="text-[#5c4a1f]">Bauarbeiten zwischen Dahn Süd und Bundenthal-Rumbach – Schienenersatzverkehr eingerichtet, gültig bis 04.10.2026.</span>
+    <span class="text-[#5c4a1f]" id="statusLangtext">Bauarbeiten zwischen Dahn Süd und Bundenthal-Rumbach – Schienenersatzverkehr eingerichtet, gültig bis 04.10.2026.</span>
   </div>
 </div>
+<script src="assets/status-daten.js"></script>
+<script src="assets/status-render.js"></script>
 
 <main id="main">
 
@@ -143,250 +145,27 @@
     </p>
 
     <div id="landschaftGallery" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image.jpg" data-caption="Viel zu entdecken gibt&#x27;s auf dem Baumwipfelpfad (Foto: Biosphärenhaus)" aria-label="Foto vergrößern: Viel zu entdecken gibt&#x27;s auf dem Baumwipfelpfad (Foto: Biosphärenhaus)">
-          <img src="assets/landschaft/image.jpg" alt="Viel zu entdecken gibt&#x27;s auf dem Baumwipfelpfad (Foto: Biosphärenhaus)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Viel zu entdecken gibt&#x27;s auf dem Baumwipfelpfad (Foto: Biosphärenhaus)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-2.jpg" data-caption="Höchstgelegene Burgruine der Pfalz: Die Wegelnburg bei Nothweiler (572 m ü.d.M.) Gehzeit ab Bf Bundenthal ca. 1 1/2 Std., 380 Höhenmeter (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" aria-label="Foto vergrößern: Höchstgelegene Burgruine der Pfalz: Die Wegelnburg bei Nothweiler (572 m ü.d.M.) Gehzeit ab Bf Bundenthal ca. 1 1/2 Std., 380 Höhenmeter (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)">
-          <img src="assets/landschaft/image-2.jpg" alt="Höchstgelegene Burgruine der Pfalz: Die Wegelnburg bei Nothweiler (572 m ü.d.M.) Gehzeit ab Bf Bundenthal ca. 1 1/2 Std., 380 Höhenmeter (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Höchstgelegene Burgruine der Pfalz: Die Wegelnburg bei Nothweiler (572 m ü.d.M.) Gehzeit ab Bf Bundenthal ca. 1 1/2 Std., 380 Höhenmeter (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-3.jpg" data-caption="Wilde Maiglöckchen am Gr. Eyberg bei Dahn (Foto: Privat)" aria-label="Foto vergrößern: Wilde Maiglöckchen am Gr. Eyberg bei Dahn (Foto: Privat)">
-          <img src="assets/landschaft/image-3.jpg" alt="Wilde Maiglöckchen am Gr. Eyberg bei Dahn (Foto: Privat)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Wilde Maiglöckchen am Gr. Eyberg bei Dahn (Foto: Privat)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-4.jpg" data-caption="Die Fladensteine bei Bundenthal. Mit interessantem Geo-Pfad. Gehzeit ab Bf Bundenthal ca. 1 Std. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" aria-label="Foto vergrößern: Die Fladensteine bei Bundenthal. Mit interessantem Geo-Pfad. Gehzeit ab Bf Bundenthal ca. 1 Std. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)">
-          <img src="assets/landschaft/image-4.jpg" alt="Die Fladensteine bei Bundenthal. Mit interessantem Geo-Pfad. Gehzeit ab Bf Bundenthal ca. 1 Std. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Die Fladensteine bei Bundenthal. Mit interessantem Geo-Pfad. Gehzeit ab Bf Bundenthal ca. 1 Std. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-5.jpg" data-caption="Auswaschungen im Buntsandstein (Foto: Privat)" aria-label="Foto vergrößern: Auswaschungen im Buntsandstein (Foto: Privat)">
-          <img src="assets/landschaft/image-5.jpg" alt="Auswaschungen im Buntsandstein (Foto: Privat)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Auswaschungen im Buntsandstein (Foto: Privat)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-6.jpg" data-caption="Burg Drachenfels bei Busenberg. Gehzeit ab Hp Bärenbach ca. 45 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" aria-label="Foto vergrößern: Burg Drachenfels bei Busenberg. Gehzeit ab Hp Bärenbach ca. 45 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)">
-          <img src="assets/landschaft/image-6.jpg" alt="Burg Drachenfels bei Busenberg. Gehzeit ab Hp Bärenbach ca. 45 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Burg Drachenfels bei Busenberg. Gehzeit ab Hp Bärenbach ca. 45 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-7.jpg" data-caption="Blick vom Winterberg (461 m ü.d.M.) auf die Pfälzer Berge. Unten eingebettet liegt Hauenstein (Foto: Privat)" aria-label="Foto vergrößern: Blick vom Winterberg (461 m ü.d.M.) auf die Pfälzer Berge. Unten eingebettet liegt Hauenstein (Foto: Privat)">
-          <img src="assets/landschaft/image-7.jpg" alt="Blick vom Winterberg (461 m ü.d.M.) auf die Pfälzer Berge. Unten eingebettet liegt Hauenstein (Foto: Privat)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Blick vom Winterberg (461 m ü.d.M.) auf die Pfälzer Berge. Unten eingebettet liegt Hauenstein (Foto: Privat)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-8.jpg" data-caption="Burgruine Neudahn, etwa 2 km nördlich von Dahn. Leicht zu erreichen ab Hp Moosbachtal. Gehzeit max. 10 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" aria-label="Foto vergrößern: Burgruine Neudahn, etwa 2 km nördlich von Dahn. Leicht zu erreichen ab Hp Moosbachtal. Gehzeit max. 10 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)">
-          <img src="assets/landschaft/image-8.jpg" alt="Burgruine Neudahn, etwa 2 km nördlich von Dahn. Leicht zu erreichen ab Hp Moosbachtal. Gehzeit max. 10 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Burgruine Neudahn, etwa 2 km nördlich von Dahn. Leicht zu erreichen ab Hp Moosbachtal. Gehzeit max. 10 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-9.jpg" data-caption="Der Teufelstisch in Hinterweidenthal ist wohl der markanteste Felsen im Pfälzerwald. Direkt unterhalb liegt der gleichnamige Abenteuer-Spielplatz, der vom Bf Hinterweidenthal Ort in gut 5 min erreichbar ist (Foto: Tourist-Information Hauenstein)" aria-label="Foto vergrößern: Der Teufelstisch in Hinterweidenthal ist wohl der markanteste Felsen im Pfälzerwald. Direkt unterhalb liegt der gleichnamige Abenteuer-Spielplatz, der vom Bf Hinterweidenthal Ort in gut 5 min erreichbar ist (Foto: Tourist-Information Hauenstein)">
-          <img src="assets/landschaft/image-9.jpg" alt="Der Teufelstisch in Hinterweidenthal ist wohl der markanteste Felsen im Pfälzerwald. Direkt unterhalb liegt der gleichnamige Abenteuer-Spielplatz, der vom Bf Hinterweidenthal Ort in gut 5 min erreichbar ist (Foto: Tourist-Information Hauenstein)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Der Teufelstisch in Hinterweidenthal ist wohl der markanteste Felsen im Pfälzerwald. Direkt unterhalb liegt der gleichnamige Abenteuer-Spielplatz, der vom Bf Hinterweidenthal Ort in gut 5 min erreichbar ist (Foto: Tourist-Information Hauenstein)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-10.jpg" data-caption="Macht Frauen glücklich: Ein Besuch der Schuhmeile in Hauenstein. Diese liegt direkt am Hp Hauenstein (Pfalz), ab Hauenstein Mitte ca. 10 min Gehzeit. Von April bis Oktober auch sonntags geöffnet. (Foto: Kuntz-Verlag, Gleiszellen)" aria-label="Foto vergrößern: Macht Frauen glücklich: Ein Besuch der Schuhmeile in Hauenstein. Diese liegt direkt am Hp Hauenstein (Pfalz), ab Hauenstein Mitte ca. 10 min Gehzeit. Von April bis Oktober auch sonntags geöffnet. (Foto: Kuntz-Verlag, Gleiszellen)">
-          <img src="assets/landschaft/image-10.jpg" alt="Macht Frauen glücklich: Ein Besuch der Schuhmeile in Hauenstein. Diese liegt direkt am Hp Hauenstein (Pfalz), ab Hauenstein Mitte ca. 10 min Gehzeit. Von April bis Oktober auch sonntags geöffnet. (Foto: Kuntz-Verlag, Gleiszellen)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Macht Frauen glücklich: Ein Besuch der Schuhmeile in Hauenstein. Diese liegt direkt am Hp Hauenstein (Pfalz), ab Hauenstein Mitte ca. 10 min Gehzeit. Von April bis Oktober auch sonntags geöffnet. (Foto: Kuntz-Verlag, Gleiszellen)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-11.jpg" data-caption="Das Biosphärenhaus ist an Sonn- und Feiertagen (1.Mai - Ende Oktober) leicht ab Bf Bundenthal erreichbar. Die Abfahrtszeiten der Busse am Bf sind auf die Züge abgestimmt (Foto: Biosphärenhaus)" aria-label="Foto vergrößern: Das Biosphärenhaus ist an Sonn- und Feiertagen (1.Mai - Ende Oktober) leicht ab Bf Bundenthal erreichbar. Die Abfahrtszeiten der Busse am Bf sind auf die Züge abgestimmt (Foto: Biosphärenhaus)">
-          <img src="assets/landschaft/image-11.jpg" alt="Das Biosphärenhaus ist an Sonn- und Feiertagen (1.Mai - Ende Oktober) leicht ab Bf Bundenthal erreichbar. Die Abfahrtszeiten der Busse am Bf sind auf die Züge abgestimmt (Foto: Biosphärenhaus)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Das Biosphärenhaus ist an Sonn- und Feiertagen (1.Mai - Ende Oktober) leicht ab Bf Bundenthal erreichbar. Die Abfahrtszeiten der Busse am Bf sind auf die Züge abgestimmt (Foto: Biosphärenhaus)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-12.jpg" data-caption="Deutschlands ersten Baumwipfelpfad kann man am Biosphärenhaus in Fischbach bei Dahn erkunden (Foto: Biosphärenhaus)" aria-label="Foto vergrößern: Deutschlands ersten Baumwipfelpfad kann man am Biosphärenhaus in Fischbach bei Dahn erkunden (Foto: Biosphärenhaus)">
-          <img src="assets/landschaft/image-12.jpg" alt="Deutschlands ersten Baumwipfelpfad kann man am Biosphärenhaus in Fischbach bei Dahn erkunden (Foto: Biosphärenhaus)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Deutschlands ersten Baumwipfelpfad kann man am Biosphärenhaus in Fischbach bei Dahn erkunden (Foto: Biosphärenhaus)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-13.jpg" data-caption="Der Barfußpfad in Ludwigswinkel. Ab Bf Bundenthal den Bus zum Biosphärenhaus in Fischbach nehmen, dann weiter zu Fuß in ca. 30 min erreichbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" aria-label="Foto vergrößern: Der Barfußpfad in Ludwigswinkel. Ab Bf Bundenthal den Bus zum Biosphärenhaus in Fischbach nehmen, dann weiter zu Fuß in ca. 30 min erreichbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)">
-          <img src="assets/landschaft/image-13.jpg" alt="Der Barfußpfad in Ludwigswinkel. Ab Bf Bundenthal den Bus zum Biosphärenhaus in Fischbach nehmen, dann weiter zu Fuß in ca. 30 min erreichbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Der Barfußpfad in Ludwigswinkel. Ab Bf Bundenthal den Bus zum Biosphärenhaus in Fischbach nehmen, dann weiter zu Fuß in ca. 30 min erreichbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-14.jpg" data-caption="Blick vom Aussichtsturm auf dem Gr. Eyberg in die Südpfälzer Berge (Foto: Privat)" aria-label="Foto vergrößern: Blick vom Aussichtsturm auf dem Gr. Eyberg in die Südpfälzer Berge (Foto: Privat)">
-          <img src="assets/landschaft/image-14.jpg" alt="Blick vom Aussichtsturm auf dem Gr. Eyberg in die Südpfälzer Berge (Foto: Privat)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Blick vom Aussichtsturm auf dem Gr. Eyberg in die Südpfälzer Berge (Foto: Privat)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-15.jpg" data-caption="Braut und Bräutigam in Dahn. Erreichbar ab Hp Dahn-Süd in ca. 5 min. Nicht begehbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" aria-label="Foto vergrößern: Braut und Bräutigam in Dahn. Erreichbar ab Hp Dahn-Süd in ca. 5 min. Nicht begehbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)">
-          <img src="assets/landschaft/image-15.jpg" alt="Braut und Bräutigam in Dahn. Erreichbar ab Hp Dahn-Süd in ca. 5 min. Nicht begehbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Braut und Bräutigam in Dahn. Erreichbar ab Hp Dahn-Süd in ca. 5 min. Nicht begehbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-16.jpg" data-caption="Rast auf dem Gr. Eyberg bei Dahn (514 m ü.d.M.) Gehzeit ab Hp Dahn-Süd ca. 1 Std. 310 Höhenmeter. (Foto: Privat)" aria-label="Foto vergrößern: Rast auf dem Gr. Eyberg bei Dahn (514 m ü.d.M.) Gehzeit ab Hp Dahn-Süd ca. 1 Std. 310 Höhenmeter. (Foto: Privat)">
-          <img src="assets/landschaft/image-16.jpg" alt="Rast auf dem Gr. Eyberg bei Dahn (514 m ü.d.M.) Gehzeit ab Hp Dahn-Süd ca. 1 Std. 310 Höhenmeter. (Foto: Privat)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Rast auf dem Gr. Eyberg bei Dahn (514 m ü.d.M.) Gehzeit ab Hp Dahn-Süd ca. 1 Std. 310 Höhenmeter. (Foto: Privat)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-17.jpg" data-caption="Schillerfelsen in Dahn. Erreichbar ab Hp Dahn-Süd in ca. 5 min. Nicht begehbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" aria-label="Foto vergrößern: Schillerfelsen in Dahn. Erreichbar ab Hp Dahn-Süd in ca. 5 min. Nicht begehbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)">
-          <img src="assets/landschaft/image-17.jpg" alt="Schillerfelsen in Dahn. Erreichbar ab Hp Dahn-Süd in ca. 5 min. Nicht begehbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Schillerfelsen in Dahn. Erreichbar ab Hp Dahn-Süd in ca. 5 min. Nicht begehbar. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-18.jpg" data-caption="Der herbstliche Pfälzerwald lädt zum Wandern ein (Foto: Privat)" aria-label="Foto vergrößern: Der herbstliche Pfälzerwald lädt zum Wandern ein (Foto: Privat)">
-          <img src="assets/landschaft/image-18.jpg" alt="Der herbstliche Pfälzerwald lädt zum Wandern ein (Foto: Privat)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Der herbstliche Pfälzerwald lädt zum Wandern ein (Foto: Privat)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-19.jpg" data-caption="Auf dem Hochstein. Gehzeit ab Hp Dahn-Süd ca. 30 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" aria-label="Foto vergrößern: Auf dem Hochstein. Gehzeit ab Hp Dahn-Süd ca. 30 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)">
-          <img src="assets/landschaft/image-19.jpg" alt="Auf dem Hochstein. Gehzeit ab Hp Dahn-Süd ca. 30 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Auf dem Hochstein. Gehzeit ab Hp Dahn-Süd ca. 30 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-20.jpg" data-caption="Der Jungfernsprung ist das Wahrzeichen von Dahn. Er überragt die Kurstadt mit 75 Meter senkrecht aufsteigender Felswand. Vom Bf Dahn ist der Felsen in gut 20 min &quot;bezwingbar&quot;. Grandiose Aussicht! (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" aria-label="Foto vergrößern: Der Jungfernsprung ist das Wahrzeichen von Dahn. Er überragt die Kurstadt mit 75 Meter senkrecht aufsteigender Felswand. Vom Bf Dahn ist der Felsen in gut 20 min &quot;bezwingbar&quot;. Grandiose Aussicht! (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)">
-          <img src="assets/landschaft/image-20.jpg" alt="Der Jungfernsprung ist das Wahrzeichen von Dahn. Er überragt die Kurstadt mit 75 Meter senkrecht aufsteigender Felswand. Vom Bf Dahn ist der Felsen in gut 20 min &quot;bezwingbar&quot;. Grandiose Aussicht! (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Der Jungfernsprung ist das Wahrzeichen von Dahn. Er überragt die Kurstadt mit 75 Meter senkrecht aufsteigender Felswand. Vom Bf Dahn ist der Felsen in gut 20 min &quot;bezwingbar&quot;. Grandiose Aussicht! (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-21.jpg" data-caption="Größte Burgenanlage der Pfalz: Altdahn, Grafendahn u. Tannstein. Gehzeit ab Hp Dahn-Süd ca. 30 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" aria-label="Foto vergrößern: Größte Burgenanlage der Pfalz: Altdahn, Grafendahn u. Tannstein. Gehzeit ab Hp Dahn-Süd ca. 30 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)">
-          <img src="assets/landschaft/image-21.jpg" alt="Größte Burgenanlage der Pfalz: Altdahn, Grafendahn u. Tannstein. Gehzeit ab Hp Dahn-Süd ca. 30 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Größte Burgenanlage der Pfalz: Altdahn, Grafendahn u. Tannstein. Gehzeit ab Hp Dahn-Süd ca. 30 min. (Foto: P. Zimmermann, Tourist-Info Dahner Felsenland)</p>
-        </figcaption>
-      </figure>
-      <figure class="gallery-item rounded-2xl overflow-hidden shadow-sm bg-white">
-        <button type="button" class="gallery-trigger" data-full="assets/landschaft/image-22.jpg" data-caption="Blick vom Jungfernsprung auf die Stadt Dahn. Im Hintergrund Hochstein u. St. Michaelskapelle mit Ehrenfriedhof (Foto: Privat)" aria-label="Foto vergrößern: Blick vom Jungfernsprung auf die Stadt Dahn. Im Hintergrund Hochstein u. St. Michaelskapelle mit Ehrenfriedhof (Foto: Privat)">
-          <img src="assets/landschaft/image-22.jpg" alt="Blick vom Jungfernsprung auf die Stadt Dahn. Im Hintergrund Hochstein u. St. Michaelskapelle mit Ehrenfriedhof (Foto: Privat)" loading="lazy" class="w-full h-48 object-cover">
-        </button>
-        <figcaption class="p-4">
-          <p class="text-sm font-medium">Blick vom Jungfernsprung auf die Stadt Dahn. Im Hintergrund Hochstein u. St. Michaelskapelle mit Ehrenfriedhof (Foto: Privat)</p>
-        </figcaption>
-      </figure>
+      <!-- Wird automatisch aus assets/landschaft-daten.js befüllt (siehe landschaft-render.js). -->
     </div>
 
     <div id="lightbox" class="lightbox" hidden>
       <div class="lightbox-backdrop" data-lightbox-close></div>
       <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
         <button type="button" class="lightbox-close" data-lightbox-close aria-label="Bildansicht schließen">✕</button>
-        <img id="lightboxImg" alt="" class="lightbox-img">
+        <div class="lightbox-image-wrap">
+          <button type="button" class="lightbox-prev" id="lightboxPrev" aria-label="Vorheriges Bild" hidden>‹</button>
+          <img id="lightboxImg" alt="" class="lightbox-img">
+          <button type="button" class="lightbox-next" id="lightboxNext" aria-label="Nächstes Bild" hidden>›</button>
+        </div>
         <p id="lightboxCaption" class="lightbox-caption"></p>
+        <p id="lightboxZaehler" class="lightbox-zaehler"></p>
       </div>
     </div>
   </section>
 
-  <script>
-    var lightbox = document.getElementById('lightbox');
-    var lightboxImg = document.getElementById('lightboxImg');
-    var lightboxCaption = document.getElementById('lightboxCaption');
-    var lastTrigger = null;
-
-    function openLightbox(trigger) {
-      lastTrigger = trigger;
-      var caption = trigger.getAttribute('data-caption');
-      lightboxImg.src = trigger.getAttribute('data-full');
-      lightboxImg.alt = caption;
-      lightboxCaption.textContent = caption;
-      lightbox.hidden = false;
-      lightbox.querySelector('.lightbox-close').focus();
-      document.addEventListener('keydown', onLightboxKeydown);
-    }
-
-    function closeLightbox() {
-      lightbox.hidden = true;
-      document.removeEventListener('keydown', onLightboxKeydown);
-      if (lastTrigger) lastTrigger.focus();
-    }
-
-    function getFocusable(container) {
-      return Array.prototype.slice.call(container.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
-        .filter(function (el) { return !el.disabled && el.offsetParent !== null; });
-    }
-
-    function onLightboxKeydown(e) {
-      if (e.key === 'Escape') {
-        closeLightbox();
-        return;
-      }
-      if (e.key === 'Tab') {
-        var focusable = getFocusable(lightbox.querySelector('.lightbox-dialog'));
-        if (focusable.length === 0) { e.preventDefault(); return; }
-        var first = focusable[0];
-        var last = focusable[focusable.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    }
-
-    document.querySelectorAll('.gallery-trigger').forEach(function (btn) {
-      btn.addEventListener('click', function () { openLightbox(btn); });
-    });
-
-    lightbox.querySelectorAll('[data-lightbox-close]').forEach(function (el) {
-      el.addEventListener('click', closeLightbox);
-    });
-  </script>
+  <script src="assets/galerie-lightbox.js"></script>
+  <script src="assets/landschaft-daten.js"></script>
+  <script src="assets/landschaft-render.js"></script>
 
 </main>
 <footer class="bg-[#12201A] text-[#C9D6C6]">
