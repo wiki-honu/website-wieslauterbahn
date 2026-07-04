@@ -1,0 +1,58 @@
+WIESLAUTERBAHN.INFO – KLICKBARER PROTOTYP
+==========================================
+
+So öffnest du den Prototyp:
+1. Diesen Ordner komplett entpacken (falls als ZIP erhalten).
+2. Datei "index.html" doppelklicken – sie öffnet sich im Browser.
+3. Über die Navigation oben durch alle Seiten klicken (Die Strecke,
+   Die Stationen, Fahrplan, Geschichte, Mediathek, Presse, Verein, Kontakt).
+
+Kein Internet nötig, keine Installation nötig – einfach anschauen.
+
+Was ist das genau?
+-------------------
+Das ist eine klickbare Vorschau ("Prototyp") der neuen Website, mit echten
+Fotos aus eurem Vereinsarchiv. Auf der Geschichte-Seite kannst du auf die
+Epochen klicken, um sie auf- und zuzuklappen. Auf der Mediathek-Seite
+funktioniert der Jahres-Filter (anklicken, Bilder werden gefiltert).
+
+Was ist noch Platzhalter?
+--------------------------
+- Die Texte auf "Die Strecke", "Die Stationen" und "Fahrplan" sind
+  Beispieltexte – die echten, finalen Texte kommen später vom Verein.
+- Das Kontaktformular ist nur eine Vorschau (Felder sind deaktiviert),
+  es verschickt noch nichts.
+- Der Fahrplan zeigt Beispieldaten, keine echten Live-Zeiten.
+- Nur ein Ausschnitt des Fotoarchivs ist eingebunden – im echten System
+  werden alle Jahrgänge (1911–1945 bis 2017) vollständig übernommen.
+
+Wie geht es weiter?
+---------------------
+Dieser Prototyp dient dazu, das Design und die Seitenstruktur zu prüfen
+und ggf. dem Vorstand zu zeigen. Sobald ihr mit der Richtung zufrieden
+seid, würde die eigentliche, technische Umsetzung folgen (siehe
+Konzept-Dokument, Kapitel 5: Next.js + Payload CMS) – dafür braucht es
+dann einen technisch versierten Ansprechpartner, der die Seite baut und
+den Verein anschließend im redaktionellen System schult.
+
+Status, Presse und Fotos schon jetzt selbst ändern (Phase 3, seit 04.07.2026)
+------------------------------------------------------------------------------
+Drei Inhalte lassen sich schon jetzt pflegen, ohne auf die große technische
+Umsetzung zu warten – nämlich über drei einfache Textdateien im Ordner
+"assets":
+  - assets/status-daten.js       → die gelbe Status-Leiste auf allen Seiten
+  - assets/presse-daten.js       → alle Pressemeldungen (presse.html + die
+                                    3 neuesten auf der Startseite)
+  - assets/mediathek-daten.js    → alle Fotos in der Mediathek
+
+Jede dieser Dateien enthält oben eine ausführliche Anleitung auf Deutsch,
+was man wo eintragen muss. Am einfachsten: die Datei mit Kay im Cowork-Chat
+besprechen ("neue Pressemeldung: ...", Foto anhängen, "Status jetzt auf
+grün") – er trägt es dann ein. Wer sich das selbst zutraut, kann die Werte
+auch direkt in einem Texteditor ändern und speichern; beim nächsten Öffnen
+einer Seite im Browser erscheint die Änderung automatisch.
+
+Wichtig: Diese drei Dateien müssen in "prototyp" UND "prototyp-rot" jeweils
+denselben Inhalt haben (siehe Hinweis in jeder Datei selbst).
+
+Bei Rückfragen einfach im Chat melden.
