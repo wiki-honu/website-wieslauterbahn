@@ -84,43 +84,115 @@
     <p class="text-xs font-semibold uppercase tracking-wide text-[#8A5A00] mb-2">Die Stationen</p>
     <h1 class="font-serif-brand text-3xl sm:text-4xl font-semibold mb-8">Alle Halte im Überblick</h1>
 
-    <div class="grid sm:grid-cols-2 gap-6">
-      <div class="rounded-2xl border border-[#D9CFB8] p-6">
+    <div id="stationenGallerie" class="grid sm:grid-cols-2 gap-6">
+      <div class="rounded-2xl border border-[#D9CFB8] overflow-hidden bg-white">
+        <button type="button" class="gallery-trigger block w-full" data-index="0" aria-label="Fotos vergrößern: Hinterweidenthal Ost">
+          <img src="assets/stationen/hinterweidenthal-ost.jpg" alt="Bahnsteig und Gleise am Haltepunkt Hinterweidenthal Ost" loading="lazy" class="w-full h-40 object-cover">
+        </button>
+        <div class="p-6">
         <h2 class="font-semibold text-lg mb-2">Hinterweidenthal Ost</h2>
         <p class="text-sm text-[#5b6b5f] mb-3">km 0,0 – Umsteigebahnhof mit Anschluss an die Regionalbahn Landau–Pirmasens.</p>
         <ul class="text-sm text-[#3c4a3f] space-y-1">
           <li><span aria-hidden="true">🅿️</span> Parkplatz direkt am Bahnhof</li>
           <li><span aria-hidden="true">🚆</span> Umstieg: DB Regio RE/RB Landau–Pirmasens</li>
         </ul>
+        <details class="mt-3 rounded-xl border border-[#D9CFB8] p-3">
+          <summary class="cursor-pointer text-sm font-medium">Ausstattung &amp; Barrierefreiheit</summary>
+          <dl class="grid sm:grid-cols-2 gap-x-4 gap-y-1 text-sm mt-3 text-[#3c4a3f]">
+            <dt class="text-[#6b7a6e]">Bahnsteighöhe</dt><dd>18 cm</dd>
+            <dt class="text-[#6b7a6e]">Bahnsteiglänge</dt><dd>120 m</dd>
+            <dt class="text-[#6b7a6e]">Stufenfreier Zugang</dt><dd>Teilweise</dd>
+            <dt class="text-[#6b7a6e]">Dynamische Fahrgastinfo</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">ÖPNV-Anbindung</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Fahrrad-Stellplätze</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Toiletten</dt><dd>Nein</dd>
+          </dl>
+        </details>
         <p class="text-sm mt-3"><a href="https://www.hinterweidenthal.de/" target="_blank" rel="noopener" class="underline text-[#1F3A2E]">www.hinterweidenthal.de/</a></p>
+        </div>
       </div>
-      <div class="rounded-2xl border border-[#D9CFB8] p-6">
+      <div class="rounded-2xl border border-[#D9CFB8] overflow-hidden bg-white">
+        <button type="button" class="gallery-trigger block w-full" data-index="1" aria-label="Fotos vergrößern: Hinterweidenthal Ort">
+          <img src="assets/stationen/hinterweidenthal-ort.jpg" alt="Haltepunkt Hinterweidenthal Ort mit Stationsschild und Empfangsgebäude" loading="lazy" class="w-full h-40 object-cover">
+        </button>
+        <div class="p-6">
         <h2 class="font-semibold text-lg mb-2">Hinterweidenthal Ort</h2>
         <p class="text-sm text-[#5b6b5f] mb-3">km 1,9 – Haltepunkt im Ortskern von Hinterweidenthal.</p>
         <ul class="text-sm text-[#3c4a3f] space-y-1">
           <li><span aria-hidden="true">🅿️</span> Parkplatz in Ortsnähe</li>
         </ul>
+        <details class="mt-3 rounded-xl border border-[#D9CFB8] p-3">
+          <summary class="cursor-pointer text-sm font-medium">Ausstattung &amp; Barrierefreiheit</summary>
+          <dl class="grid sm:grid-cols-2 gap-x-4 gap-y-1 text-sm mt-3 text-[#3c4a3f]">
+            <dt class="text-[#6b7a6e]">Bahnsteighöhe</dt><dd>23 cm</dd>
+            <dt class="text-[#6b7a6e]">Bahnsteiglänge</dt><dd>80 m</dd>
+            <dt class="text-[#6b7a6e]">Stufenfreier Zugang</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">Dynamische Fahrgastinfo</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">ÖPNV-Anbindung</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Fahrrad-Stellplätze</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Toiletten</dt><dd>Nein</dd>
+          </dl>
+        </details>
         <p class="text-sm mt-3"><a href="https://www.hinterweidenthal.de/" target="_blank" rel="noopener" class="underline text-[#1F3A2E]">www.hinterweidenthal.de/</a></p>
+        </div>
       </div>
-      <div class="rounded-2xl border border-[#D9CFB8] p-6">
+      <div class="rounded-2xl border border-[#D9CFB8] overflow-hidden bg-white">
+        <button type="button" class="gallery-trigger block w-full" data-index="2" aria-label="Fotos vergrößern: Moosbachtal">
+          <img src="assets/stationen/moosbachtal.jpg" alt="Haltepunkt Moosbachtal mit Wartehäuschen und Gleisverlauf durchs Tal" loading="lazy" class="w-full h-40 object-cover">
+        </button>
+        <div class="p-6">
         <h2 class="font-semibold text-lg mb-2">Moosbachtal</h2>
         <p class="text-sm text-[#5b6b5f] mb-3">km 6,0 – Haltepunkt am Campingplatz Moosbachtal, beliebter Ausgangspunkt für Wanderungen.</p>
         <ul class="text-sm text-[#3c4a3f] space-y-1">
           <li><span aria-hidden="true">🏕️</span> Direkt am Campingplatz Moosbachtal</li>
           <li><span aria-hidden="true">🥾</span> Ausgangspunkt für Wanderungen</li>
         </ul>
+        <details class="mt-3 rounded-xl border border-[#D9CFB8] p-3">
+          <summary class="cursor-pointer text-sm font-medium">Ausstattung &amp; Barrierefreiheit</summary>
+          <dl class="grid sm:grid-cols-2 gap-x-4 gap-y-1 text-sm mt-3 text-[#3c4a3f]">
+            <dt class="text-[#6b7a6e]">Bahnsteighöhe</dt><dd>55 cm</dd>
+            <dt class="text-[#6b7a6e]">Bahnsteiglänge</dt><dd>60 m</dd>
+            <dt class="text-[#6b7a6e]">Stufenfreier Zugang</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">Dynamische Fahrgastinfo</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">ÖPNV-Anbindung</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Fahrrad-Stellplätze</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Toiletten</dt><dd>Nein</dd>
+          </dl>
+        </details>
         <p class="text-sm mt-3"><a href="https://www.campingplatz-moosbachtal.info/" target="_blank" rel="noopener" class="underline text-[#1F3A2E]">www.campingplatz-moosbachtal.info/</a></p>
+        </div>
       </div>
-      <div class="rounded-2xl border border-[#D9CFB8] p-6">
+      <div class="rounded-2xl border border-[#D9CFB8] overflow-hidden bg-white">
+        <button type="button" class="gallery-trigger block w-full" data-index="3" aria-label="Fotos vergrößern: Dahn">
+          <img src="assets/stationen/dahn.jpg" alt="Haltepunkt Dahn mit Gleis entlang der Ortsdurchfahrt" loading="lazy" class="w-full h-40 object-cover">
+        </button>
+        <div class="p-6">
         <h2 class="font-semibold text-lg mb-2">Dahn</h2>
         <p class="text-sm text-[#5b6b5f] mb-3">km 7,8 – Haltepunkt im Zentrum von Dahn.</p>
         <ul class="text-sm text-[#3c4a3f] space-y-1">
           <li><span aria-hidden="true">🅿️</span> Parkplatz in Ortsnähe</li>
           <li><span aria-hidden="true">🚌</span> Busanschluss ins Ortszentrum</li>
         </ul>
+        <details class="mt-3 rounded-xl border border-[#D9CFB8] p-3">
+          <summary class="cursor-pointer text-sm font-medium">Ausstattung &amp; Barrierefreiheit</summary>
+          <dl class="grid sm:grid-cols-2 gap-x-4 gap-y-1 text-sm mt-3 text-[#3c4a3f]">
+            <dt class="text-[#6b7a6e]">Bahnsteighöhe</dt><dd>23 + 10 cm</dd>
+            <dt class="text-[#6b7a6e]">Bahnsteiglänge</dt><dd>60 + 70 m</dd>
+            <dt class="text-[#6b7a6e]">Stufenfreier Zugang</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">Dynamische Fahrgastinfo</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">ÖPNV-Anbindung</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">Fahrrad-Stellplätze</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Toiletten</dt><dd>Nein</dd>
+          </dl>
+        </details>
         <p class="text-sm mt-3"><a href="https://dahn.de/" target="_blank" rel="noopener" class="underline text-[#1F3A2E]">dahn.de/</a></p>
+        </div>
       </div>
-      <div class="rounded-2xl border border-[#D9CFB8] p-6">
+      <div class="rounded-2xl border border-[#D9CFB8] overflow-hidden bg-white">
+        <button type="button" class="gallery-trigger block w-full" data-index="4" aria-label="Fotos vergrößern: Dahn Süd">
+          <img src="assets/stationen/dahn-sued.jpg" alt="Bahnhof Dahn Süd mit Bahnsteig, Parkschild P2 und Ortsdurchfahrt" loading="lazy" class="w-full h-40 object-cover">
+        </button>
+        <div class="p-6">
         <h2 class="font-semibold text-lg mb-2">Dahn Süd</h2>
         <p class="text-sm text-[#5b6b5f] mb-3">km 8,6 – Bahnhof mit historischem Empfangsgebäude, zentral in Dahn.</p>
         <ul class="text-sm text-[#3c4a3f] space-y-1">
@@ -128,36 +200,119 @@
           <li><span aria-hidden="true">🚌</span> Busanschluss ins Ortszentrum</li>
           <li><span aria-hidden="true">🏰</span> Fußweg zur Dahner Burgengruppe</li>
         </ul>
+        <details class="mt-3 rounded-xl border border-[#D9CFB8] p-3">
+          <summary class="cursor-pointer text-sm font-medium">Ausstattung &amp; Barrierefreiheit</summary>
+          <dl class="grid sm:grid-cols-2 gap-x-4 gap-y-1 text-sm mt-3 text-[#3c4a3f]">
+            <dt class="text-[#6b7a6e]">Bahnsteighöhe</dt><dd>38 cm</dd>
+            <dt class="text-[#6b7a6e]">Bahnsteiglänge</dt><dd>60 m</dd>
+            <dt class="text-[#6b7a6e]">Stufenfreier Zugang</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">Dynamische Fahrgastinfo</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">ÖPNV-Anbindung</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Fahrrad-Stellplätze</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Toiletten</dt><dd>Nein</dd>
+          </dl>
+        </details>
         <p class="text-sm mt-3"><a href="https://dahn.de/" target="_blank" rel="noopener" class="underline text-[#1F3A2E]">dahn.de/</a></p>
+        </div>
       </div>
-      <div class="rounded-2xl border border-[#D9CFB8] p-6">
+      <div class="rounded-2xl border border-[#D9CFB8] overflow-hidden bg-white">
+        <button type="button" class="gallery-trigger block w-full" data-index="5" aria-label="Fotos vergrößern: Busenberg-Schindhard">
+          <img src="assets/stationen/busenberg-schindhard.jpg" alt="Haltepunkt Busenberg-Schindhard mit historischem Wagen und Empfangsgebäude" loading="lazy" class="w-full h-40 object-cover">
+        </button>
+        <div class="p-6">
         <h2 class="font-semibold text-lg mb-2">Busenberg-Schindhard</h2>
         <p class="text-sm text-[#5b6b5f] mb-3">km 10,8 – Haltepunkt für Busenberg und Schindhard, Ausgangspunkt zur Burgruine Drachenfels.</p>
         <ul class="text-sm text-[#3c4a3f] space-y-1">
           <li><span aria-hidden="true">🏰</span> Zugang zur Burgruine Drachenfels</li>
           <li><span aria-hidden="true">🅿️</span> Parkplatz in Ortsnähe</li>
         </ul>
+        <details class="mt-3 rounded-xl border border-[#D9CFB8] p-3">
+          <summary class="cursor-pointer text-sm font-medium">Ausstattung &amp; Barrierefreiheit</summary>
+          <dl class="grid sm:grid-cols-2 gap-x-4 gap-y-1 text-sm mt-3 text-[#3c4a3f]">
+            <dt class="text-[#6b7a6e]">Bahnsteighöhe</dt><dd>23 cm</dd>
+            <dt class="text-[#6b7a6e]">Bahnsteiglänge</dt><dd>100 m</dd>
+            <dt class="text-[#6b7a6e]">Stufenfreier Zugang</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">Dynamische Fahrgastinfo</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">ÖPNV-Anbindung</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">Fahrrad-Stellplätze</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Toiletten</dt><dd>Nein</dd>
+          </dl>
+        </details>
         <p class="text-sm mt-3"><a href="https://www.busenberg.de/" target="_blank" rel="noopener" class="underline text-[#1F3A2E]">www.busenberg.de/</a></p>
+        </div>
       </div>
-      <div class="rounded-2xl border border-[#D9CFB8] p-6">
+      <div class="rounded-2xl border border-[#D9CFB8] overflow-hidden bg-white">
+        <button type="button" class="gallery-trigger block w-full" data-index="6" aria-label="Fotos vergrößern: Bruchweiler">
+          <img src="assets/stationen/bruchweiler-baerenbach.jpg" alt="Bahnsteig Bruchweiler-Bärenbach mit Gleisverlauf durch den Ort" loading="lazy" class="w-full h-40 object-cover">
+        </button>
+        <div class="p-6">
         <h2 class="font-semibold text-lg mb-2">Bruchweiler</h2>
         <p class="text-sm text-[#5b6b5f] mb-3">km 13,6 – Haltepunkt am Ortsrand, beliebt bei Radfahrern.</p>
         <ul class="text-sm text-[#3c4a3f] space-y-1">
           <li><span aria-hidden="true">🚲</span> Fahrradmitnahme möglich</li>
         </ul>
+        <details class="mt-3 rounded-xl border border-[#D9CFB8] p-3">
+          <summary class="cursor-pointer text-sm font-medium">Ausstattung &amp; Barrierefreiheit</summary>
+          <dl class="grid sm:grid-cols-2 gap-x-4 gap-y-1 text-sm mt-3 text-[#3c4a3f]">
+            <dt class="text-[#6b7a6e]">Bahnsteighöhe</dt><dd>23 cm</dd>
+            <dt class="text-[#6b7a6e]">Bahnsteiglänge</dt><dd>100 m</dd>
+            <dt class="text-[#6b7a6e]">Stufenfreier Zugang</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">Dynamische Fahrgastinfo</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">ÖPNV-Anbindung</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">Fahrrad-Stellplätze</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Toiletten</dt><dd>Nein</dd>
+          </dl>
+          <p class="text-xs text-[#6b7a6e] mt-2">Offizieller Name lt. Bahn: „Bruchweiler-Bärenbach".</p>
+        </details>
         <p class="text-sm mt-3"><a href="https://www.bruchweiler-baerenbach.de/" target="_blank" rel="noopener" class="underline text-[#1F3A2E]">www.bruchweiler-baerenbach.de/</a></p>
+        </div>
       </div>
-      <div class="rounded-2xl border border-[#D9CFB8] p-6">
+      <div class="rounded-2xl border border-[#D9CFB8] overflow-hidden bg-white">
+        <button type="button" class="gallery-trigger block w-full" data-index="7" aria-label="Fotos vergrößern: Bundenthal-Rumbach">
+          <img src="assets/stationen/bundenthal-rumbach.jpg" alt="Gleisanlage am Endbahnhof Bundenthal-Rumbach" loading="lazy" class="w-full h-40 object-cover">
+        </button>
+        <div class="p-6">
         <h2 class="font-semibold text-lg mb-2">Bundenthal-Rumbach</h2>
         <p class="text-sm text-[#5b6b5f] mb-3">
           km 15,1 – Endbahnhof der Strecke. <strong>Hinweis:</strong> Aufgrund der laufenden Sanierungsarbeiten derzeit nur per
           Schienenersatzverkehr (Bus) ab Dahn Süd erreichbar – Details siehe
           <a href="fahrplan.html" class="underline text-[#1F3A2E]">Fahrplan</a>.
         </p>
+        <details class="mt-3 rounded-xl border border-[#D9CFB8] p-3">
+          <summary class="cursor-pointer text-sm font-medium">Ausstattung &amp; Barrierefreiheit</summary>
+          <dl class="grid sm:grid-cols-2 gap-x-4 gap-y-1 text-sm mt-3 text-[#3c4a3f]">
+            <dt class="text-[#6b7a6e]">Bahnsteighöhe</dt><dd>23 cm</dd>
+            <dt class="text-[#6b7a6e]">Bahnsteiglänge</dt><dd>220 m</dd>
+            <dt class="text-[#6b7a6e]">Stufenfreier Zugang</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">Dynamische Fahrgastinfo</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">ÖPNV-Anbindung</dt><dd>Ja</dd>
+            <dt class="text-[#6b7a6e]">Fahrrad-Stellplätze</dt><dd>Nein</dd>
+            <dt class="text-[#6b7a6e]">Toiletten</dt><dd>Nein</dd>
+          </dl>
+        </details>
         <p class="text-sm mt-3"><a href="http://www.bundenthal-touristik.info/" target="_blank" rel="noopener" class="underline text-[#1F3A2E]">www.bundenthal-touristik.info/</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="lightbox" class="lightbox" hidden>
+      <div class="lightbox-backdrop" data-lightbox-close></div>
+      <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+        <button type="button" class="lightbox-close" data-lightbox-close aria-label="Bildansicht schließen">✕</button>
+        <div class="lightbox-image-wrap">
+          <button type="button" class="lightbox-prev" id="lightboxPrev" aria-label="Vorheriges Bild" hidden>‹</button>
+          <img id="lightboxImg" alt="" class="lightbox-img">
+          <button type="button" class="lightbox-next" id="lightboxNext" aria-label="Nächstes Bild" hidden>›</button>
+        </div>
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+        <p id="lightboxZaehler" class="lightbox-zaehler"></p>
       </div>
     </div>
   </section>
+
+  <script src="assets/galerie-lightbox.js"></script>
+  <script src="assets/stationen-daten.js"></script>
+  <script src="assets/stationen-render.js"></script>
 
 </main>
 <footer class="bg-[#12201A] text-[#C9D6C6]">
