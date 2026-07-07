@@ -89,7 +89,7 @@
       </p>
       <div class="mt-8 flex flex-wrap gap-4">
         <a href="fahrplan.html" class="inline-flex items-center rounded-full bg-[#E9B44C] text-[#1F3A2E] px-6 py-3 font-semibold hover:bg-[#f0c46c] transition-colors">Fahrplan ansehen</a>
-        <a href="geschichte.html" class="inline-flex items-center rounded-full border border-white/60 text-white px-6 py-3 font-semibold hover:bg-white/10 transition-colors">Geschichte entdecken</a>
+        <a href="verein.html" class="inline-flex items-center rounded-full border border-white/60 text-white px-6 py-3 font-semibold hover:bg-white/10 transition-colors">Verein entdecken</a>
       </div>
 
       <div class="mt-12 max-w-md sm:max-w-lg bg-[#F7F3EA]/95 backdrop-blur rounded-2xl shadow-xl p-5">
@@ -101,7 +101,7 @@
              alle Uhrzeiten) wird erst von renderNaechsteAbfahrten() aus
              assets/fahrplan-daten.js erzeugt - hier steht dafür kein Festwert
              mehr im HTML. -->
-        <div class="space-y-4 text-sm" id="naechsteAbfahrten">
+        <div class="text-sm" id="naechsteAbfahrten" style="display:flex;flex-direction:column;gap:1rem">
           <div data-von="Hinterweidenthal Ort" data-nach="Dahn Süd"></div>
           <div data-von="Dahn Süd" data-nach="Hinterweidenthal Ost"></div>
         </div>
@@ -141,6 +141,10 @@
 
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <a href="verein.html" class="group rounded-2xl border border-[#D9CFB8] p-6 hover:border-[#1F3A2E] transition-colors">
+        <h3 class="font-serif-brand text-lg font-semibold mb-2">Verein</h3>
+        <p class="text-sm text-[#5b6b5f]">Eisenbahnfreunde Dahn e.V. – Mitglied werden &amp; mitgestalten.</p>
+      </a>
       <a href="strecke.html" class="group rounded-2xl border border-[#D9CFB8] p-6 hover:border-[#1F3A2E] transition-colors">
         <h3 class="font-serif-brand text-lg font-semibold mb-2">Strecke</h3>
         <p class="text-sm text-[#5b6b5f]">Von Hinterweidenthal Ost durch das Dahner Felsenland bis Bundenthal-Rumbach.</p>
@@ -152,10 +156,6 @@
       <a href="geschichte.html" class="group rounded-2xl border border-[#D9CFB8] p-6 hover:border-[#1F3A2E] transition-colors">
         <h3 class="font-serif-brand text-lg font-semibold mb-2">Geschichte</h3>
         <p class="text-sm text-[#5b6b5f]">Von 1911 bis heute: Bau, Stilllegung und Wiederbelebung durch den Verein.</p>
-      </a>
-      <a href="verein.html" class="group rounded-2xl border border-[#D9CFB8] p-6 hover:border-[#1F3A2E] transition-colors">
-        <h3 class="font-serif-brand text-lg font-semibold mb-2">Verein</h3>
-        <p class="text-sm text-[#5b6b5f]">Eisenbahnfreunde Dahn e.V. – Mitglied werden &amp; mitgestalten.</p>
       </a>
     </div>
   </section>
@@ -256,29 +256,63 @@
   // neu aus assets/fahrplan-daten.js auf - im HTML steht dafür nur noch je
   // Zeile fest, WELCHE Richtung (data-von/data-nach) gezeigt werden soll, das
   // ist eine bewusste Redaktions-Einstellung, kein "vergessener" Altwert.
+  // Nachtrag (07.07.2026, 2. Korrektur): Die Zeit-Pillen brachen auf schmalen
+  // Mobil-Bildschirmen vorzeitig in eine 2. Zeile um, obwohl links noch Platz
+  // gewesen wäre - Ursache war die feste Pixel-Breite jeder Pille (siehe
+  // styles.css). Jetzt wird zuerst über BEIDE Richtungs-Zeilen die jeweils
+  // größere Anzahl Abfahrten ermittelt (maxCols) und beiden Zeilen als
+  // gemeinsame Spaltenzahl für ein CSS-Grid mitgegeben (grid-template-columns
+  // per Inline-Style) - jede Spalte ist "minmax(0,1fr)" und schrumpft/wächst
+  // responsiv mit dem verfügbaren Platz, statt eine feste Breite zu erzwingen.
+  // Jede Pille bekommt zusätzlich ihre Spalte explizit zugewiesen
+  // (grid-column, ebenfalls per Inline-Style), gezählt von rechts nach links
+  // (startCol = maxCols - Anzahl Abfahrten + 1) - dadurch bleiben die Spalten
+  // zwischen beiden Zeilen weiterhin exakt untereinander ausgerichtet und
+  // rechtsbündig gefüllt, brechen aber nur noch um, wenn wirklich keine
+  // Spalte mehr Platz hat, nicht mehr wegen fester Pixel-Werte.
   var abfahrtenBloecke = document.querySelectorAll('#naechsteAbfahrten [data-von]');
   function renderNaechsteAbfahrten() {
     if (!abfahrtenBloecke.length || !window.WLB_FAHRPLAN) return;
     var jetzt = new Date();
+
+    // 1. Durchlauf: für jede Richtung die Abfahrten ermitteln und dabei die
+    // größte Anzahl Abfahrten über alle Richtungen hinweg merken (maxCols) -
+    // erst danach kann jede Zeile mit derselben Spaltenzahl gerendert werden.
+    var eintraege = [];
+    var maxCols = 1;
     abfahrtenBloecke.forEach(function (block) {
       var von = block.getAttribute('data-von');
       var nach = block.getAttribute('data-nach');
       var ergebnis = WLB_FAHRPLAN.tagesAbfahrten(von, nach, jetzt);
-      var zeitenHtml = !ergebnis
-        ? '<span class="text-[#5b6b5f]">Außerhalb der Saison</span>'
-        : ergebnis.zeiten.map(function (zeit) {
-            // Kein "Uhr" an jeder Zeit (Nutzerwunsch 07.07.2026) - die Pillen
-            // stehen ohnehin klar erkennbar unter der Label-Zeile, "Uhr" an
-            // jeder einzelnen Zeit war redundant und wirkte unruhig.
-            return '<span class="abfahrt-chip">' + zeit + '</span>';
-          }).join('');
+      eintraege.push({ block: block, von: von, nach: nach, ergebnis: ergebnis });
+      if (ergebnis && ergebnis.zeiten.length > maxCols) maxCols = ergebnis.zeiten.length;
+    });
+
+    // 2. Durchlauf: jede Zeile mit der gemeinsamen Spaltenzahl (maxCols) und
+    // rechtsbündiger Spalten-Zuweisung je Pille rendern.
+    eintraege.forEach(function (eintrag) {
+      var ergebnis = eintrag.ergebnis;
+      var zeitenHtml;
+      if (!ergebnis) {
+        // Spannt über alle Spalten, damit der Hinweistext nicht in eine
+        // einzelne (schmale) Grid-Spalte gequetscht wird.
+        zeitenHtml = '<span class="text-[#5b6b5f]" style="grid-column:1 / -1">Außerhalb der Saison</span>';
+      } else {
+        var startCol = maxCols - ergebnis.zeiten.length + 1;
+        zeitenHtml = ergebnis.zeiten.map(function (zeit, i) {
+          // Kein "Uhr" an jeder Zeit (Nutzerwunsch 07.07.2026) - die Pillen
+          // stehen ohnehin klar erkennbar unter der Label-Zeile, "Uhr" an
+          // jeder einzelnen Zeit war redundant und wirkte unruhig.
+          return '<span class="abfahrt-chip" style="grid-column:' + (startCol + i) + '">' + zeit + '</span>';
+        }).join('');
+      }
       var labelText = ergebnis ? WLB_FAHRPLAN.formatTagLabel(ergebnis.tag, ergebnis.datum) : '';
-      block.innerHTML =
+      eintrag.block.innerHTML =
         '<div class="flex items-baseline justify-between gap-3 mb-2">' +
-          '<span class="font-semibold text-[#1F3A2E]">' + von + ' → ' + nach + '</span>' +
+          '<span class="font-semibold text-[#1F3A2E]">' + eintrag.von + ' → ' + eintrag.nach + '</span>' +
           '<span class="shrink-0 text-xs font-semibold uppercase tracking-wide text-[#8A5A00]">' + labelText + '</span>' +
         '</div>' +
-        '<div class="abfahrt-liste">' + zeitenHtml + '</div>';
+        '<div class="abfahrt-liste" style="grid-template-columns:repeat(' + maxCols + ',minmax(0,52px))">' + zeitenHtml + '</div>';
     });
   }
   renderNaechsteAbfahrten();

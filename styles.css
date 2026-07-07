@@ -1086,34 +1086,49 @@ body {
    handgeschriebene, garantiert wirksame CSS-Klassen ersetzt: .abfahrt-liste
    richtet die Zeiten rechtsbündig (flush mit "Heute") aus und füllt bei
    mehreren Zeilen nach links auf, .abfahrt-chip ist die einzelne Zeit-Pille. */
-/* Nachtrag (07.07.2026): .abfahrt-chip hat jetzt eine FESTE Breite (width:52px)
-   statt sich an die Textlänge anzupassen. Grund: Bei zwei unabhängigen
-   Richtungs-Zeilen mit rechtsbündiger Ausrichtung (justify-content:flex-end)
-   sorgt nur eine feste Breite + fester Gap dafür, dass sich die einzelnen
-   Zeit-Spalten zwischen beiden Zeilen exakt untereinander ausrichten (auch
-   wenn die Anzahl der Abfahrten je Richtung unterschiedlich ist) - mit
-   variabler Breite (Padding statt fester Breite) driften die Spalten je nach
-   Uhrzeit-Text minimal auseinander. */
+/* Nachtrag (07.07.2026): .abfahrt-chip hatte eine FESTE Breite (width:52px)
+   statt sich an die Textlänge anzupassen, damit sich die Zeit-Spalten
+   zwischen beiden Richtungs-Zeilen exakt untereinander ausrichten (auch bei
+   unterschiedlich vielen Abfahrten je Richtung). Problem auf schmalen
+   Mobil-Bildschirmen: die feste Breite passte sich nicht an, dadurch brach
+   die Liste schon in 2 Zeilen um, obwohl links (durch die feste 52px-Breite
+   ungenutzter) Platz gewesen wäre. */
+/* Nachtrag (07.07.2026, 2. Korrektur): .abfahrt-liste nutzt jetzt CSS Grid
+   statt Flexbox. Das Render-Skript in index.html setzt für beide
+   Richtungs-Zeilen dieselbe Spaltenzahl (grid-template-columns, inline per
+   JS berechnet aus der größeren der beiden Abfahrten-Listen) und platziert
+   jede Zeit-Pille explizit in ihrer Spalte (grid-column, ebenfalls inline
+   gesetzt) - so bleiben die Spalten zwischen beiden Zeilen weiterhin exakt
+   untereinander ausgerichtet UND rechtsbündig gefüllt (fehlende Pillen
+   bleiben als Lücke links). Jede Spalte ist "minmax(0,52px)": bis zu 52px
+   breit (wie die alten festen Pillen, damit der Desktop-Look kompakt bleibt
+   und nicht in die Breite gezogen wird), kann aber auf schmalen
+   Mobil-Bildschirmen bis auf 0 schrumpfen, wenn sonst nicht alle Spalten in
+   eine Zeile passen würden - dadurch bricht die Liste nur noch um, wenn
+   wirklich kein Platz mehr für eine weitere Spalte da ist, nicht mehr
+   vorzeitig wegen fester Pixel-Breiten. justify-content:end sorgt dafür,
+   dass die Spalten (wie zuvor mit justify-content:flex-end) rechtsbündig
+   bleiben, wenn insgesamt mehr Platz da ist, als die Pillen brauchen. */
 .abfahrt-liste {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:flex-end;
+  display:grid;
+  justify-content:end;
   gap:6px
 }
 .abfahrt-chip {
-  display:inline-flex;
+  display:flex;
   align-items:center;
   justify-content:center;
   box-sizing:border-box;
-  width:52px;
+  min-width:0;
   border-radius:999px;
   background:#EFE9DA;
   color:#1F3A2E;
   padding:4px 0;
-  font-size:12px;
+  font-size:11px;
   line-height:1.4;
   font-weight:500;
-  white-space:nowrap
+  white-space:nowrap;
+  overflow:hidden
 }
 :focus-visible {
   outline:3px solid #E9B44C;
