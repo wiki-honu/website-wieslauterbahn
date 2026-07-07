@@ -303,7 +303,23 @@
           // Kein "Uhr" an jeder Zeit (Nutzerwunsch 07.07.2026) - die Pillen
           // stehen ohnehin klar erkennbar unter der Label-Zeile, "Uhr" an
           // jeder einzelnen Zeit war redundant und wirkte unruhig.
-          return '<span class="abfahrt-chip" style="grid-column:' + (startCol + i) + '">' + zeit + '</span>';
+          // Nachtrag (07.07.2026): Bereits vergangene Abfahrten werden jetzt
+          // ausgegraut (Klasse .abfahrt-chip--vergangen) - relevant nur am
+          // "Heute"-Tag (ergebnis.tag === 0), da bei "Morgen"/späteren Tagen
+          // per Definition noch keine der Zeiten vergangen sein kann. Der
+          // Vergleich nutzt Datum UND Uhrzeit (nicht nur die Uhrzeit), damit
+          // ein Tageswechsel korrekt berücksichtigt wird.
+          var istVergangen = false;
+          if (ergebnis.tag === 0) {
+            var teile = zeit.split(':').map(Number);
+            var abfahrtZeitpunkt = new Date(
+              ergebnis.datum.getFullYear(), ergebnis.datum.getMonth(), ergebnis.datum.getDate(),
+              teile[0], teile[1]
+            );
+            istVergangen = abfahrtZeitpunkt <= jetzt;
+          }
+          var chipClass = 'abfahrt-chip' + (istVergangen ? ' abfahrt-chip--vergangen' : '');
+          return '<span class="' + chipClass + '" style="grid-column:' + (startCol + i) + '">' + zeit + '</span>';
         }).join('');
       }
       var labelText = ergebnis ? WLB_FAHRPLAN.formatTagLabel(ergebnis.tag, ergebnis.datum) : '';

@@ -1114,6 +1114,15 @@ body {
   justify-content:end;
   gap:6px
 }
+/* Nachtrag (07.07.2026, 3. Korrektur): Der Pillen-Hintergrund (#EFE9DA) wich
+   sichtbar vom Hintergrund des umgebenden Kastens ab (bg-[#F7F3EA]/95) - auf
+   Nutzerwunsch an die Kastenfarbe angeglichen (#F7F3EA). Damit die Pillen
+   trotz jetzt gleicher Füllfarbe weiterhin als eigene Form erkennbar bleiben,
+   wurde ein dünner Rahmen in derselben gedeckten Farbe ergänzt, die auch die
+   Karten-Rahmen an anderer Stelle im Prototyp nutzen (border-[#D9CFB8]) - als
+   `box-shadow` statt `border` umgesetzt, damit er (anders als ein echter
+   Rahmen, selbst mit box-sizing:border-box) keinen Platz vom eh schon knappen
+   Innenraum auf sehr schmalen Mobil-Bildschirmen wegnimmt. */
 .abfahrt-chip {
   display:flex;
   align-items:center;
@@ -1121,7 +1130,8 @@ body {
   box-sizing:border-box;
   min-width:0;
   border-radius:999px;
-  background:#EFE9DA;
+  background:#F7F3EA;
+  box-shadow:0 0 0 1px #D9CFB8 inset;
   color:#1F3A2E;
   padding:4px 0;
   font-size:11px;
@@ -1129,6 +1139,15 @@ body {
   font-weight:500;
   white-space:nowrap;
   overflow:hidden
+}
+/* Nachtrag (07.07.2026, 4. Korrektur): Bereits vergangene Abfahrten (heutiges
+   Datum, Uhrzeit schon verstrichen) werden ausgegraut, damit auf einen Blick
+   erkennbar ist, welche Abfahrten des Tages noch bevorstehen. Nur Opacity
+   reduziert (keine Hintergrund-/Rahmenfarbe geändert), damit die Pille als
+   Form/Layout exakt gleich bleibt (keine Verschiebung, keine Änderung an der
+   Spaltenausrichtung) - nur optisch "verblasst". */
+.abfahrt-chip--vergangen {
+  opacity:0.4
 }
 :focus-visible {
   outline:3px solid #E9B44C;
