@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Der Verein Eisenbahnfreunde Dahn e.V. – Geschichte, Vorstand, Mitgliedschaft und Satzung.">
-<title>Verein – Wieslauterbahn</title>
+<meta name="description" content="Die Streckenführung der Wieslauterbahn durch das Dahner Felsenland: von Hinterweidenthal Ost über Dahn Süd bis Bundenthal-Rumbach.">
+<title>Strecke – Wieslauterbahn</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='23' fill='%231F3A2E'/%3E%3Cpath d='M12 30 h24 M16 30 v4 M32 30 v4 M14 22 h20 l-3-8 h-14 z' stroke='%23F7F3EA' stroke-width='2.5' fill='none' stroke-linejoin='round'/%3E%3Ccircle cx='18' cy='34' r='2' fill='%23F7F3EA'/%3E%3Ccircle cx='30' cy='34' r='2' fill='%23F7F3EA'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,8 +32,8 @@
 
       <nav class="hidden lg:flex items-center gap-6 text-sm font-medium" aria-label="Hauptnavigation">
         <a href="fahrplan.html" class="hover:text-[#E9B44C] transition-colors">Fahrplan</a>
-        <a href="verein.html" class="text-[#E9B44C]">Verein</a>
-        <a href="strecke.html" class="hover:text-[#E9B44C] transition-colors">Strecke</a>
+        <a href="verein.html" class="hover:text-[#E9B44C] transition-colors">Verein</a>
+        <a href="strecke.html" class="text-[#E9B44C]">Strecke</a>
         <a href="stationen.html" class="hover:text-[#E9B44C] transition-colors">Stationen</a>
         <a href="mediathek.html" class="hover:text-[#E9B44C] transition-colors">Mediathek</a>
         <a href="presse.html" class="hover:text-[#E9B44C] transition-colors">Presse</a>
@@ -51,8 +51,8 @@
   </div>
   <nav id="mobileMenu" class="hidden lg:hidden bg-[#17291F] px-4 pb-4 text-sm" aria-label="Mobile Navigation">
     <a href="fahrplan.html" class="block py-2 border-b border-white/10 ">Fahrplan</a>
-    <a href="verein.html" class="block py-2 border-b border-white/10 text-[#E9B44C] font-semibold">Verein</a>
-    <a href="strecke.html" class="block py-2 border-b border-white/10 ">Strecke</a>
+    <a href="verein.html" class="block py-2 border-b border-white/10 ">Verein</a>
+    <a href="strecke.html" class="block py-2 border-b border-white/10 text-[#E9B44C] font-semibold">Strecke</a>
     <a href="stationen.html" class="block py-2 border-b border-white/10 ">Stationen</a>
     <a href="mediathek.html" class="block py-2 border-b border-white/10 ">Mediathek</a>
     <a href="presse.html" class="block py-2 border-b border-white/10 ">Presse</a>
@@ -75,38 +75,97 @@
 
 <main id="main">
 
+  <section class="relative">
+    <div class="h-64 sm:h-80">
+      <img src="assets/strecke.jpg" alt="Die Wieslauterbahn-Strecke führt durch dichten Mischwald im Dahner Felsenland" class="w-full h-full object-cover">
+    </div>
+  </section>
   <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-    <p class="text-xs font-semibold uppercase tracking-wide text-[#8A5A00] mb-2">Verein</p>
-    <h1 class="font-serif-brand text-3xl sm:text-4xl font-semibold mb-6">Eisenbahnfreunde Dahn e.V.</h1>
+    <p class="text-xs font-semibold uppercase tracking-wide text-[#8A5A00] mb-2">Strecke</p>
+    <h1 class="font-serif-brand text-3xl sm:text-4xl font-semibold mb-6">Durch das Dahner Felsenland</h1>
     <p class="text-[#3c4a3f] leading-relaxed mb-6">
-      Der Verein Eisenbahnfreunde Dahn e.V. hat es sich seit den 1990er-Jahren zur Aufgabe gemacht, die
-      Wieslauterbahn als historische Ausflugsbahn zu erhalten und zu betreiben. Ehrenamtliche Mitglieder
-      kümmern sich um Fahrbetrieb, Instandhaltung und die Vermittlung der Streckengeschichte.
+      Die Wieslauterbahn verbindet auf rund 15 Kilometern die Bahnhöfe Hinterweidenthal Ost und
+      Bundenthal-Rumbach über acht Stationen. Die Strecke schlängelt sich durch dichten Mischwald und vorbei an den markanten
+      Sandsteinfelsen der Südwestpfalz – eine der landschaftlich reizvollsten Nebenbahnstrecken Deutschlands.
     </p>
 
-    <div class="rounded-2xl border border-[#D9CFB8] p-6 mb-10">
-      <p class="text-xs font-semibold uppercase tracking-wide text-[#5b6b5f] mb-2">Vorstand</p>
-      <p class="font-semibold">H. Matthäus Burkhart</p>
-      <p class="text-sm text-[#5b6b5f]">Geschäftsführer</p>
+    <div class="rounded-2xl border border-[#D9CFB8] p-6 sm:p-8 my-10">
+      <p class="text-xs font-semibold uppercase tracking-wide text-[#5b6b5f] mb-4">Streckenverlauf</p>
+      <ol class="relative border-l-2 border-[#D9CFB8] ml-3 space-y-8">
+        <li class="relative pl-8">
+          <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-[#1F3A2E] bg-[#E9B44C]" aria-hidden="true"></span>
+          <p class="font-semibold">Hinterweidenthal Ost</p>
+          <p class="text-sm text-[#5b6b5f]">km 0,0 – Umsteigebahnhof – Anschluss an die DB-Regio-Linie Landau–Pirmasens.</p>
+        </li>
+        <li class="relative pl-8">
+          <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-[#1F3A2E] bg-[#E9B44C]" aria-hidden="true"></span>
+          <p class="font-semibold">Hinterweidenthal Ort</p>
+          <p class="text-sm text-[#5b6b5f]">km 1,9 – Haltepunkt im Ortskern von Hinterweidenthal.</p>
+        </li>
+        <li class="relative pl-8">
+          <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-[#1F3A2E] bg-[#E9B44C]" aria-hidden="true"></span>
+          <p class="font-semibold">Moosbachtal</p>
+          <p class="text-sm text-[#5b6b5f]">km 6,0 – Haltepunkt am Campingplatz Moosbachtal, beliebter Ausgangspunkt für Wanderungen.</p>
+        </li>
+        <li class="relative pl-8">
+          <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-[#1F3A2E] bg-[#E9B44C]" aria-hidden="true"></span>
+          <p class="font-semibold">Dahn</p>
+          <p class="text-sm text-[#5b6b5f]">km 7,8 – Haltepunkt im Zentrum von Dahn.</p>
+        </li>
+        <li class="relative pl-8">
+          <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-[#1F3A2E] bg-[#E9B44C]" aria-hidden="true"></span>
+          <p class="font-semibold">Dahn Süd</p>
+          <p class="text-sm text-[#5b6b5f]">km 8,6 – Bahnhof mit Empfangsgebäude, direkt unterhalb der Dahner Burgengruppe.</p>
+        </li>
+        <li class="relative pl-8">
+          <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-[#1F3A2E] bg-[#E9B44C]" aria-hidden="true"></span>
+          <p class="font-semibold">Busenberg-Schindhard</p>
+          <p class="text-sm text-[#5b6b5f]">km 10,8 – Haltepunkt für Busenberg und Schindhard, Ausgangspunkt zur Burgruine Drachenfels.</p>
+        </li>
+        <li class="relative pl-8">
+          <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-[#1F3A2E] bg-[#E9B44C]" aria-hidden="true"></span>
+          <p class="font-semibold">Bruchweiler</p>
+          <p class="text-sm text-[#5b6b5f]">km 13,6 – Haltepunkt am Ortsrand, beliebter Einstieg für Radfahrer.</p>
+        </li>
+        <li class="relative pl-8">
+          <span class="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-[#1F3A2E] bg-[#E9B44C]" aria-hidden="true"></span>
+          <p class="font-semibold">Bundenthal-Rumbach</p>
+          <p class="text-sm text-[#5b6b5f]">km 15,1 – Endbahnhof – aktuell wegen Sanierungsarbeiten mit Schienenersatzverkehr angebunden.</p>
+        </li>
+      </ol>
     </div>
 
-    <h2 id="mitglied" class="font-serif-brand text-2xl font-semibold mb-3 scroll-mt-24">Mitglied werden</h2>
-    <p class="text-[#3c4a3f] leading-relaxed mb-4">
-      Der Verein lebt vom ehrenamtlichen Engagement seiner Mitglieder – ob als aktiver Helfer bei Fahrten und
-      Instandhaltung oder als Fördermitglied. Interessierte wenden sich gerne über das
-      <a href="kontakt.html" class="underline text-[#1F3A2E]">Kontaktformular</a> an den Verein.
+    <h2 class="font-serif-brand text-2xl font-semibold mb-3 mt-12">Die Landschaft der Südwestpfalz</h2>
+    <p class="text-[#3c4a3f] leading-relaxed">
+      Das Dahner Felsenland zählt zu den waldreichsten Regionen Deutschlands und ist Teil des Naturparks
+      Pfälzerwald-Nordvogesen (UNESCO-Biosphärenreservat). Die charakteristischen Buntsandsteinfelsen,
+      Burgruinen und dichten Wälder machen die Zugfahrt selbst zu einem Landschaftserlebnis. Ausflugsziele
+      und Wanderwege sind ab den Bahnhöfen und Haltepunkten der Wieslauterbahn in wenigen Gehminuten bis
+      rund einer Stunde erreichbar.
     </p>
-    <a href="kontakt.html" class="inline-flex items-center rounded-full bg-[#E9B44C] text-[#1F3A2E] px-6 py-3 font-semibold hover:bg-[#f0c46c] transition-colors mb-10">Jetzt Kontakt aufnehmen</a>
 
-    <h2 id="satzung" class="font-serif-brand text-2xl font-semibold mb-3 scroll-mt-24">Satzung</h2>
-    <details class="rounded-2xl border border-[#D9CFB8] p-6">
-      <summary class="cursor-pointer font-semibold">Satzung des Eisenbahnfreunde Dahn e.V. anzeigen</summary>
-      <p class="mt-4 text-sm text-[#5b6b5f]">
-        Im echten System wird hier die vollständige Vereinssatzung eingebettet bzw. als PDF zum Download
-        bereitgestellt.
-      </p>
-    </details>
+    <div id="landschaftGallery" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <!-- Wird automatisch aus assets/landschaft-daten.js befüllt (siehe landschaft-render.js). -->
+    </div>
+
+    <div id="lightbox" class="lightbox" hidden>
+      <div class="lightbox-backdrop" data-lightbox-close></div>
+      <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+        <button type="button" class="lightbox-close" data-lightbox-close aria-label="Bildansicht schließen">✕</button>
+        <div class="lightbox-image-wrap">
+          <button type="button" class="lightbox-prev" id="lightboxPrev" aria-label="Vorheriges Bild" hidden>‹</button>
+          <img id="lightboxImg" alt="" class="lightbox-img">
+          <button type="button" class="lightbox-next" id="lightboxNext" aria-label="Nächstes Bild" hidden>›</button>
+        </div>
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+        <p id="lightboxZaehler" class="lightbox-zaehler"></p>
+      </div>
+    </div>
   </section>
+
+  <script src="assets/galerie-lightbox.js"></script>
+  <script src="assets/landschaft-daten.js"></script>
+  <script src="assets/landschaft-render.js"></script>
 
 </main>
 <footer class="bg-[#12201A] text-[#C9D6C6]">

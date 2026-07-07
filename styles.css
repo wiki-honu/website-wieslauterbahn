@@ -604,17 +604,17 @@ video {
 }
 .border-\[\#1F3A2E\] {
   --tw-border-opacity:1;
-  border-color:rgb(var(--wlb-primary)/var(--tw-border-opacity,1))
+  border-color:rgb(31 58 46/var(--tw-border-opacity,1))
 }
 .border-\[\#1F3A2E\]\/30 {
-  border-color:rgb(var(--wlb-primary)/.3)
+  border-color:rgba(31,58,46,.3)
 }
 .border-\[\#D9CFB8\] {
   --tw-border-opacity:1;
-  border-color:rgb(var(--wlb-border)/var(--tw-border-opacity,1))
+  border-color:rgb(217 207 184/var(--tw-border-opacity,1))
 }
 .border-\[\#E9B44C\]\/50 {
-  border-color:rgb(var(--wlb-accent)/.5)
+  border-color:rgba(233,180,76,.5)
 }
 .border-white\/10 {
   border-color:hsla(0,0%,100%,.1)
@@ -624,34 +624,34 @@ video {
 }
 .bg-\[\#12201A\] {
   --tw-bg-opacity:1;
-  background-color:rgb(var(--wlb-primary-darkest)/var(--tw-bg-opacity,1))
+  background-color:rgb(18 32 26/var(--tw-bg-opacity,1))
 }
 .bg-\[\#17291F\] {
   --tw-bg-opacity:1;
-  background-color:rgb(var(--wlb-primary-dark)/var(--tw-bg-opacity,1))
+  background-color:rgb(23 41 31/var(--tw-bg-opacity,1))
 }
 .bg-\[\#1F3A2E\] {
   --tw-bg-opacity:1;
-  background-color:rgb(var(--wlb-primary)/var(--tw-bg-opacity,1))
+  background-color:rgb(31 58 46/var(--tw-bg-opacity,1))
 }
 .bg-\[\#E9B44C\] {
   --tw-bg-opacity:1;
-  background-color:rgb(var(--wlb-accent)/var(--tw-bg-opacity,1))
+  background-color:rgb(233 180 76/var(--tw-bg-opacity,1))
 }
 .bg-\[\#EFE9DA\] {
   --tw-bg-opacity:1;
-  background-color:rgb(var(--wlb-bg-alt)/var(--tw-bg-opacity,1))
+  background-color:rgb(239 233 218/var(--tw-bg-opacity,1))
 }
 .bg-\[\#F7F3EA\] {
   --tw-bg-opacity:1;
-  background-color:rgb(var(--wlb-bg)/var(--tw-bg-opacity,1))
+  background-color:rgb(247 243 234/var(--tw-bg-opacity,1))
 }
 .bg-\[\#F7F3EA\]\/95 {
-  background-color:rgb(var(--wlb-bg)/.95)
+  background-color:hsla(42,45%,94%,.95)
 }
 .bg-\[\#FCEFCB\] {
   --tw-bg-opacity:1;
-  background-color:rgb(var(--wlb-bg-status)/var(--tw-bg-opacity,1))
+  background-color:rgb(252 239 203/var(--tw-bg-opacity,1))
 }
 .bg-white {
   --tw-bg-opacity:1;
@@ -661,16 +661,16 @@ video {
   background-image:linear-gradient(to top,var(--tw-gradient-stops))
 }
 .from-\[\#12201A\]\/90 {
-  --tw-gradient-from:rgb(var(--wlb-primary-darkest)/.9) var(--tw-gradient-from-position);
-  --tw-gradient-to:rgb(var(--wlb-primary-darkest)/0) var(--tw-gradient-to-position);
+  --tw-gradient-from:rgba(18,32,26,.9) var(--tw-gradient-from-position);
+  --tw-gradient-to:rgba(18,32,26,0) var(--tw-gradient-to-position);
   --tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)
 }
 .via-\[\#12201A\]\/40 {
-  --tw-gradient-to:rgb(var(--wlb-primary-darkest)/0) var(--tw-gradient-to-position);
-  --tw-gradient-stops:var(--tw-gradient-from),rgb(var(--wlb-primary-darkest)/.4) var(--tw-gradient-via-position),var(--tw-gradient-to)
+  --tw-gradient-to:rgba(18,32,26,0) var(--tw-gradient-to-position);
+  --tw-gradient-stops:var(--tw-gradient-from),rgba(18,32,26,.4) var(--tw-gradient-via-position),var(--tw-gradient-to)
 }
 .to-\[\#12201A\]\/10 {
-  --tw-gradient-to:rgb(var(--wlb-primary-darkest)/.1) var(--tw-gradient-to-position)
+  --tw-gradient-to:rgba(18,32,26,.1) var(--tw-gradient-to-position)
 }
 .object-cover {
   -o-object-fit:cover;
@@ -814,51 +814,51 @@ video {
 }
 .text-\[\#1F2E24\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-text-body)/var(--tw-text-opacity,1))
+  color:rgb(31 46 36/var(--tw-text-opacity,1))
 }
 .text-\[\#1F3A2E\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-primary)/var(--tw-text-opacity,1))
+  color:rgb(31 58 46/var(--tw-text-opacity,1))
 }
 .text-\[\#3c4a3f\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-text-paragraph)/var(--tw-text-opacity,1))
+  color:rgb(60 74 63/var(--tw-text-opacity,1))
 }
 .text-\[\#5b6b5f\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-text-secondary)/var(--tw-text-opacity,1))
+  color:rgb(91 107 95/var(--tw-text-opacity,1))
 }
 .text-\[\#5c4a1f\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-text-status)/var(--tw-text-opacity,1))
+  color:rgb(92 74 31/var(--tw-text-opacity,1))
 }
 .text-\[\#6b7a6e\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-text-tertiary)/var(--tw-text-opacity,1))
+  color:rgb(107 122 110/var(--tw-text-opacity,1))
 }
 .text-\[\#8A5A00\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-primary)/var(--tw-text-opacity,1))
+  color:rgb(138 90 0/var(--tw-text-opacity,1))
 }
 .text-\[\#C9D6C6\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-footer-link)/var(--tw-text-opacity,1))
+  color:rgb(201 214 198/var(--tw-text-opacity,1))
 }
 .text-\[\#D9E2D6\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-footer-paragraph)/var(--tw-text-opacity,1))
+  color:rgb(217 226 214/var(--tw-text-opacity,1))
 }
 .text-\[\#E7EEE4\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-hero-paragraph)/var(--tw-text-opacity,1))
+  color:rgb(231 238 228/var(--tw-text-opacity,1))
 }
 .text-\[\#E9B44C\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-accent)/var(--tw-text-opacity,1))
+  color:rgb(233 180 76/var(--tw-text-opacity,1))
 }
 .text-\[\#F7F3EA\] {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-bg)/var(--tw-text-opacity,1))
+  color:rgb(247 243 234/var(--tw-text-opacity,1))
 }
 .text-white {
   --tw-text-opacity:1;
@@ -926,26 +926,26 @@ video {
 }
 .odd\:bg-\[\#F2EEE1\]:nth-child(odd) {
   --tw-bg-opacity:1;
-  background-color:rgb(var(--wlb-bg-table-odd)/var(--tw-bg-opacity,1))
+  background-color:rgb(242 238 225/var(--tw-bg-opacity,1))
 }
 .hover\:border-\[\#1F3A2E\]:hover {
   --tw-border-opacity:1;
-  border-color:rgb(var(--wlb-primary)/var(--tw-border-opacity,1))
+  border-color:rgb(31 58 46/var(--tw-border-opacity,1))
 }
 .hover\:bg-\[\#f0c46c\]:hover {
   --tw-bg-opacity:1;
-  background-color:rgb(var(--wlb-accent-hover)/var(--tw-bg-opacity,1))
+  background-color:rgb(240 196 108/var(--tw-bg-opacity,1))
 }
 .hover\:bg-white\/10:hover {
   background-color:hsla(0,0%,100%,.1)
 }
 .hover\:text-\[\#8A5A00\]:hover {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-primary)/var(--tw-text-opacity,1))
+  color:rgb(138 90 0/var(--tw-text-opacity,1))
 }
 .hover\:text-\[\#E9B44C\]:hover {
   --tw-text-opacity:1;
-  color:rgb(var(--wlb-accent)/var(--tw-text-opacity,1))
+  color:rgb(233 180 76/var(--tw-text-opacity,1))
 }
 .hover\:text-white:hover {
   --tw-text-opacity:1;
@@ -1059,50 +1059,69 @@ video {
 body {
   font-family:'Inter',system-ui,sans-serif
 }
-
 .font-serif-brand {
   font-family:'Lora',Georgia,serif
 }
-
 .wood-texture {
   background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0,rgba(255,255,255,.03) 2px,transparent 2px,transparent 40px)
 }
-
-/* ================================================================
-   WLB Farbschema "Rot" – hier zentral anpassen.
-   Werte als "R G B" (Leerzeichen-getrennt, ohne Kommas), damit sie
-   in rgb(var(--x)/OPACITY) für transparente Varianten nutzbar sind.
-   ================================================================ */
-:root {
-  --wlb-primary: 155 22 33;            /* Hauptfarbe (RAL 3020-Familie): Kopfzeile, Rahmen, Links, Tabellenkopf */
-  --wlb-primary-dark: 114 16 24;       /* dunklerer Ton: mobiles Menü */
-  --wlb-primary-darkest: 69 13 17;     /* dunkelster Ton: Footer, Hero-Verlauf, Lightbox-Hintergrund */
-  --wlb-accent: 196 148 74;            /* Gold-Akzent: Buttons, Zeitstrahl-Punkte, Logo-Ring, Status-Punkt */
-  --wlb-accent-hover: 219 178 115;     /* helleres Gold: Hover-Zustand der Buttons */
-  --wlb-bg: 246 246 245;               /* Seiten-Hintergrund, helle Kartenflächen, Logo-Linien */
-  --wlb-bg-status: 251 234 203;        /* Hintergrund der Status-/Baustellen-Hinweisleiste */
-  --wlb-bg-alt: 239 239 238;           /* alternativer Sektionshintergrund */
-  --wlb-bg-table-odd: 241 241 239;     /* Tabellenzeilen (ungerade) */
-  --wlb-border: 218 216 214;           /* Rahmenfarbe auf hellem Grund */
-  --wlb-text-body: 35 24 25;           /* Standard-Fließtext */
-  --wlb-text-paragraph: 74 58 59;      /* Absatztext */
-  --wlb-text-secondary: 110 92 93;     /* gedämpfter Text */
-  --wlb-text-status: 122 82 0;         /* Text in der Status-Hinweisleiste */
-  --wlb-text-tertiary: 138 118 119;    /* Bildunterschriften, kleine Meta-Angaben */
-  --wlb-footer-link: 217 195 196;      /* Links im Footer */
-  --wlb-footer-paragraph: 227 208 209; /* Fließtext im Footer */
-  --wlb-hero-paragraph: 240 222 223;   /* Fließtext im dunklen Hero-Bereich */
+/* Lesbarkeits-Fix Hauptseite (07.07.2026): der bisherige leichte Verlauf über
+   dem Hero-Bild ließ Text je nach Foto/Bildschirm zu schlecht lesbar werden.
+   .hero-scrim ersetzt den einfachen Tailwind-Verlauf durch einen kräftigeren,
+   gleichmäßig über das ganze Bild liegenden Abdunkler; .hero-text-shadow gibt
+   Überschrift/Text zusätzlich einen Schlagschatten, der auf jedem Hintergrund
+   für genug Kontrast sorgt. */
+.hero-scrim {
+  background:linear-gradient(180deg,rgba(18,32,26,.60) 0%,rgba(18,32,26,.50) 30%,rgba(18,32,26,.72) 68%,rgba(18,32,26,.92) 100%)
 }
-
+.hero-text-shadow {
+  text-shadow:0 2px 4px rgba(0,0,0,.55),0 6px 18px rgba(0,0,0,.55)
+}
+/* "Nächste Abfahrten"-Box (07.07.2026, Nachtrag): die Zeit-Pillen nutzten
+   zuerst Tailwind-Arbitrary-Klassen (gap-1.5, px-2.5, py-1, justify-end),
+   die in dieser einmalig offline kompilierten styles.css nicht enthalten
+   waren - dieselbe bekannte Falle wie unter "Neue Tailwind-Arbitrary-Value-
+   Klassen ..." in HANDOFF.md beschrieben. Ergebnis war ein ungewollt eng
+   zusammenlaufender Zeit-Block ohne sichtbare Abstände/Pillenform. Als
+   handgeschriebene, garantiert wirksame CSS-Klassen ersetzt: .abfahrt-liste
+   richtet die Zeiten rechtsbündig (flush mit "Heute") aus und füllt bei
+   mehreren Zeilen nach links auf, .abfahrt-chip ist die einzelne Zeit-Pille. */
+/* Nachtrag (07.07.2026): .abfahrt-chip hat jetzt eine FESTE Breite (width:52px)
+   statt sich an die Textlänge anzupassen. Grund: Bei zwei unabhängigen
+   Richtungs-Zeilen mit rechtsbündiger Ausrichtung (justify-content:flex-end)
+   sorgt nur eine feste Breite + fester Gap dafür, dass sich die einzelnen
+   Zeit-Spalten zwischen beiden Zeilen exakt untereinander ausrichten (auch
+   wenn die Anzahl der Abfahrten je Richtung unterschiedlich ist) - mit
+   variabler Breite (Padding statt fester Breite) driften die Spalten je nach
+   Uhrzeit-Text minimal auseinander. */
+.abfahrt-liste {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:6px
+}
+.abfahrt-chip {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  box-sizing:border-box;
+  width:52px;
+  border-radius:999px;
+  background:#EFE9DA;
+  color:#1F3A2E;
+  padding:4px 0;
+  font-size:12px;
+  line-height:1.4;
+  font-weight:500;
+  white-space:nowrap
+}
 :focus-visible {
-  outline:3px solid rgb(var(--wlb-accent));
+  outline:3px solid #E9B44C;
   outline-offset:2px
 }
-
 .skip-link:focus {
   transform:translateY(0)
 }
-
 .gallery-trigger {
   display:block;
   width:100%;
@@ -1122,7 +1141,6 @@ body {
     width:12rem
   }
 }
-
 .lightbox {
   position:fixed;
   inset:0;
@@ -1132,17 +1150,14 @@ body {
   justify-content:center;
   padding:1.5rem
 }
-
 .lightbox[hidden] {
   display:none
 }
-
 .lightbox-backdrop {
   position:absolute;
   inset:0;
-  background:rgb(var(--wlb-primary-darkest)/.92)
+  background:rgba(18,32,26,.92)
 }
-
 .lightbox-dialog {
   position:relative;
   z-index:1;
@@ -1152,7 +1167,6 @@ body {
   flex-direction:column;
   align-items:center
 }
-
 .lightbox-img {
   max-width:100%;
   max-height:75vh;
@@ -1161,7 +1175,6 @@ body {
   border-radius:1rem;
   box-shadow:0 20px 25px -5px rgba(0,0,0,.3)
 }
-
 .lightbox-image-wrap {
   position:relative;
   display:flex;
@@ -1169,7 +1182,6 @@ body {
   justify-content:center;
   width:100%
 }
-
 .lightbox-prev,
 .lightbox-next {
   position:absolute;
@@ -1179,8 +1191,8 @@ body {
   height:2.75rem;
   border-radius:9999px;
   border:0;
-  background:rgb(var(--wlb-primary-darkest)/.55);
-  color:rgb(var(--wlb-bg));
+  background:rgba(18,32,26,.55);
+  color:#F7F3EA;
   font-size:1.75rem;
   line-height:1;
   cursor:pointer;
@@ -1188,40 +1200,33 @@ body {
   align-items:center;
   justify-content:center
 }
-
 .lightbox-prev:hover,
 .lightbox-next:hover {
-  background:rgb(var(--wlb-primary-darkest)/.8)
+  background:rgba(18,32,26,.8)
 }
-
 .lightbox-prev {
   left:.75rem
 }
-
 .lightbox-next {
   right:.75rem
 }
-
 .lightbox-prev[hidden],
 .lightbox-next[hidden] {
   display:none
 }
-
 .lightbox-zaehler {
-  color:rgb(var(--wlb-bg)/.75);
+  color:rgba(247,243,234,.75);
   font-size:.75rem;
   text-align:center;
   margin-top:.35rem
 }
-
 .lightbox-caption {
-  color:rgb(var(--wlb-bg));
+  color:#F7F3EA;
   font-size:.875rem;
   text-align:center;
   margin-top:1rem;
   max-width:40rem
 }
-
 .lightbox-close {
   position:absolute;
   top:-2.75rem;
@@ -1230,17 +1235,15 @@ body {
   height:2.5rem;
   border-radius:9999px;
   border:0;
-  background:rgb(var(--wlb-bg)/.15);
-  color:rgb(var(--wlb-bg));
+  background:rgba(247,243,234,.15);
+  color:#F7F3EA;
   font-size:1.125rem;
   line-height:1;
   cursor:pointer
 }
-
 .lightbox-close:hover {
-  background:rgb(var(--wlb-bg)/.3)
+  background:rgba(247,243,234,.3)
 }
-
 @media (max-width:640px) {
   .lightbox-close {
     top:-2.25rem;
@@ -1248,20 +1251,3 @@ body {
   }
 
 }
-
-.logo-ring {
-  stroke:rgb(var(--wlb-accent))
-}
-
-.logo-mark {
-  stroke:rgb(var(--wlb-bg))
-}
-
-.logo-dot {
-  fill:rgb(var(--wlb-bg))
-}
-
-.status-dot {
-  fill:rgb(var(--wlb-accent))
-}
-

@@ -4,8 +4,8 @@ WIESLAUTERBAHN.INFO – KLICKBARER PROTOTYP
 So öffnest du den Prototyp:
 1. Diesen Ordner komplett entpacken (falls als ZIP erhalten).
 2. Datei "index.html" doppelklicken – sie öffnet sich im Browser.
-3. Über die Navigation oben durch alle Seiten klicken (Die Strecke,
-   Die Stationen, Fahrplan, Geschichte, Mediathek, Presse, Verein, Kontakt).
+3. Über die Navigation oben durch alle Seiten klicken (Fahrplan, Verein,
+   Strecke, Stationen, Mediathek, Presse, Geschichte, Kontakt).
 
 Kein Internet nötig, keine Installation nötig – einfach anschauen.
 
@@ -18,7 +18,7 @@ funktioniert der Jahres-Filter (anklicken, Bilder werden gefiltert).
 
 Was ist noch Platzhalter?
 --------------------------
-- Die Texte auf "Die Strecke", "Die Stationen" und "Fahrplan" sind
+- Die Texte auf "Strecke", "Stationen" und "Fahrplan" sind
   Beispieltexte – die echten, finalen Texte kommen später vom Verein.
 - Das Kontaktformular ist nur eine Vorschau (Felder sind deaktiviert),
   es verschickt noch nichts.
@@ -52,7 +52,8 @@ grün") – er trägt es dann ein. Wer sich das selbst zutraut, kann die Werte
 auch direkt in einem Texteditor ändern und speichern; beim nächsten Öffnen
 einer Seite im Browser erscheint die Änderung automatisch.
 
-Wichtig: Diese drei Dateien müssen in "prototyp" UND "prototyp-rot" jeweils
-denselben Inhalt haben (siehe Hinweis in jeder Datei selbst).
+Hinweis: Es gibt seit dem Vorstandsbeschluss vom 07.07.2026 nur noch diese
+eine Design-Variante (Grün/Gold) – die frühere zweite Variante "prototyp-rot"
+wurde final verworfen und entfernt.
 
 Bei Rückfragen einfach im Chat melden.

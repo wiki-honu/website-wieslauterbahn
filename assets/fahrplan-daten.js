@@ -61,6 +61,16 @@ var FAHRPLAN_SOMMER_2026 = {
       { station: 'Dahn', zeit: '17:43' },
       { station: 'Moosbachtal', zeit: '17:46' },
       { station: 'Hinterweidenthal Ort', zeit: '17:52' },
+      // Hinterweidenthal Ost fehlte hier ursprünglich (07.07.2026 als Lücke entdeckt,
+      // dadurch fehlte diese letzte Abfahrt des Tages in der "Nächste Abfahrten"-Box
+      // für die Richtung Dahn Süd -> Hinterweidenthal Ost). Alle anderen Züge dieser
+      // Fahrtrichtung erreichen Hinterweidenthal Ost 2-3 Minuten nach Hinterweidenthal
+      // Ort (siehe z. B. RB56 13627/13629/13521/13541/13607 unten) - nach demselben
+      // Muster hier ergänzt (+3 Min.), da dieser Zug ohnehin über Hinterweidenthal Ost
+      // weiter Richtung Annweiler/Landau/Neustadt fährt (Umsteigebahnhof zur DB-Regio-
+      // Linie). Zeit ist eine plausible Näherung, keine bestätigte Original-PDF-Zeile -
+      // bei Gelegenheit mit dem Verein gegenprüfen.
+      { station: 'Hinterweidenthal Ost', zeit: '17:55' },
       { station: 'Annweiler am Trifels', zeit: '18:20' },
       { station: 'Landau (Pfalz) Hbf.', zeit: '18:40' },
       { station: 'Neustadt (Weinstr) Hbf.', zeit: '19:10' }
@@ -197,9 +207,67 @@ var WLB_FAHRPLAN = (function (daten) {
     return wt + ', ' + tt + '.' + mm + '.';
   }
 
+  /**
+   * Liefert ALLE Abfahrten zwischen zwei Stationen für den nächsten Tag, an
+   * dem auf dieser Verbindung überhaupt etwas fährt (heute, falls die Saison
+   * heute schon läuft und es Fahrten gibt - sonst der nächste passende Tag,
+   * bis zu 60 Tage voraus). Anders als naechsteAbfahrt() wird hier nicht nach
+   * der einen nächsten Fahrt gesucht, sondern der komplette Tagesfahrplan
+   * dieser Richtung zurückgegeben (auch bereits vergangene Zeiten DES NOCH
+   * NICHT KOMPLETT VERSTRICHENEN Tages, siehe unten) - für die "Nächste
+   * Abfahrten"-Box auf der Startseite, die alle Abfahrten des Tages zeigen
+   * soll statt nur der nächsten einzelnen.
+   *
+   * Dynamisches Verhalten (07.07.2026 ergänzt, war im ersten Entwurf verloren
+   * gegangen): Ist die letzte Abfahrt des heutigen Tages für diese Richtung
+   * bereits vorbei, wird NICHT der (dann komplett in der Vergangenheit
+   * liegende) heutige Tag zurückgegeben, sondern automatisch zum nächsten
+   * Tag mit Verkehr weitergesucht - genau wie es naechsteAbfahrt() schon für
+   * die einzelne nächste Abfahrt tut. Das sorgt dafür, dass z. B. nach der
+   * letzten Abfahrt des Tages automatisch "Morgen" (oder das Datum, falls
+   * noch weiter in der Zukunft) statt eines veralteten "Heute" angezeigt
+   * wird. Solange mindestens eine Abfahrt des heutigen Tages noch aussteht,
+   * werden weiterhin ALLE heutigen Zeiten gezeigt (auch bereits vergangene),
+   * wie ursprünglich gewünscht - nur ein komplett verstrichener Tag wird
+   * übersprungen.
+   *
+   * Gibt { tag, datum, zeiten: ['10:00', '11:22', ...] } zurück, oder null,
+   * wenn im gesamten Zeitraum keine Fahrt gefunden wird.
+   */
+  function tagesAbfahrten(vonStation, nachStation, jetzt) {
+    var heute = dateOnly(jetzt);
+    for (var tag = 0; tag <= 60; tag++) {
+      var datum = addTage(heute, tag);
+      var zeiten = [];
+      daten.zuege.forEach(function (zug) {
+        if (!zugFaehrtAm(zug, datum)) return;
+        var vonIdx = -1, nachIdx = -1;
+        zug.halte.forEach(function (halt, i) {
+          if (halt.station === vonStation && vonIdx === -1) vonIdx = i;
+          if (halt.station === nachStation) nachIdx = i;
+        });
+        if (vonIdx === -1 || nachIdx === -1 || nachIdx <= vonIdx) return;
+        zeiten.push(zug.halte[vonIdx].zeit);
+      });
+      if (!zeiten.length) continue;
+      zeiten.sort(function (a, b) { return a.localeCompare(b); });
+      if (tag === 0) {
+        var letzteZeitVorbei = zeiten.every(function (zeit) {
+          var teile = zeit.split(':').map(Number);
+          var abfahrt = new Date(datum.getFullYear(), datum.getMonth(), datum.getDate(), teile[0], teile[1]);
+          return abfahrt <= jetzt;
+        });
+        if (letzteZeitVorbei) continue; // heute komplett vorbei -> nächsten Tag suchen
+      }
+      return { tag: tag, datum: datum, zeiten: zeiten };
+    }
+    return null;
+  }
+
   return {
     daten: daten,
     naechsteAbfahrt: naechsteAbfahrt,
+    tagesAbfahrten: tagesAbfahrten,
     formatTagLabel: formatTagLabel
   };
 })(FAHRPLAN_SOMMER_2026);

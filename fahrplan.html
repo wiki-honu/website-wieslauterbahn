@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Aktueller Fahrplan und Betriebsstatus der Wieslauterbahn – Abfahrtszeiten, Saisonzeiten und Sonderfahrten im Dahner Felsenland.">
 <title>Fahrplan – Wieslauterbahn</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='23' fill='%239B1621'/%3E%3Cpath d='M12 30 h24 M16 30 v4 M32 30 v4 M14 22 h20 l-3-8 h-14 z' stroke='%23F6F6F5' stroke-width='2.5' fill='none' stroke-linejoin='round'/%3E%3Ccircle cx='18' cy='34' r='2' fill='%23F6F6F5'/%3E%3Ccircle cx='30' cy='34' r='2' fill='%23F6F6F5'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='23' fill='%231F3A2E'/%3E%3Cpath d='M12 30 h24 M16 30 v4 M32 30 v4 M14 22 h20 l-3-8 h-14 z' stroke='%23F7F3EA' stroke-width='2.5' fill='none' stroke-linejoin='round'/%3E%3Ccircle cx='18' cy='34' r='2' fill='%23F7F3EA'/%3E%3Ccircle cx='30' cy='34' r='2' fill='%23F7F3EA'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,10 +19,10 @@
     <div class="flex items-center justify-between h-20">
       <a href="index.html" class="flex items-center gap-3">
         <svg width="36" height="36" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-          <circle cx="24" cy="24" r="22" class="logo-ring" stroke-width="2"/>
-          <path d="M12 30 h24 M16 30 v4 M32 30 v4 M14 22 h20 l-3-8 h-14 z" class="logo-mark" stroke-width="2" fill="none" stroke-linejoin="round"/>
-          <circle cx="18" cy="34" r="2" class="logo-dot"/>
-          <circle cx="30" cy="34" r="2" class="logo-dot"/>
+          <circle cx="24" cy="24" r="22" stroke="#E9B44C" stroke-width="2"/>
+          <path d="M12 30 h24 M16 30 v4 M32 30 v4 M14 22 h20 l-3-8 h-14 z" stroke="#F7F3EA" stroke-width="2" fill="none" stroke-linejoin="round"/>
+          <circle cx="18" cy="34" r="2" fill="#F7F3EA"/>
+          <circle cx="30" cy="34" r="2" fill="#F7F3EA"/>
         </svg>
         <span class="leading-tight">
           <span class="block font-serif-brand text-xl font-semibold tracking-wide">Wieslauterbahn</span>
@@ -31,13 +31,13 @@
       </a>
 
       <nav class="hidden lg:flex items-center gap-6 text-sm font-medium" aria-label="Hauptnavigation">
-        <a href="die-strecke.html" class="hover:text-[#E9B44C] transition-colors">Die Strecke</a>
-        <a href="die-stationen.html" class="hover:text-[#E9B44C] transition-colors">Die Stationen</a>
         <a href="fahrplan.html" class="text-[#E9B44C]">Fahrplan</a>
-        <a href="geschichte.html" class="hover:text-[#E9B44C] transition-colors">Geschichte</a>
+        <a href="verein.html" class="hover:text-[#E9B44C] transition-colors">Verein</a>
+        <a href="strecke.html" class="hover:text-[#E9B44C] transition-colors">Strecke</a>
+        <a href="stationen.html" class="hover:text-[#E9B44C] transition-colors">Stationen</a>
         <a href="mediathek.html" class="hover:text-[#E9B44C] transition-colors">Mediathek</a>
         <a href="presse.html" class="hover:text-[#E9B44C] transition-colors">Presse</a>
-        <a href="verein.html" class="hover:text-[#E9B44C] transition-colors">Verein</a>
+        <a href="geschichte.html" class="hover:text-[#E9B44C] transition-colors">Geschichte</a>
         <a href="kontakt.html" class="hover:text-[#E9B44C] transition-colors">Kontakt</a>
       </nav>
 
@@ -50,13 +50,13 @@
     </div>
   </div>
   <nav id="mobileMenu" class="hidden lg:hidden bg-[#17291F] px-4 pb-4 text-sm" aria-label="Mobile Navigation">
-    <a href="die-strecke.html" class="block py-2 border-b border-white/10 ">Die Strecke</a>
-    <a href="die-stationen.html" class="block py-2 border-b border-white/10 ">Die Stationen</a>
     <a href="fahrplan.html" class="block py-2 border-b border-white/10 text-[#E9B44C] font-semibold">Fahrplan</a>
-    <a href="geschichte.html" class="block py-2 border-b border-white/10 ">Geschichte</a>
+    <a href="verein.html" class="block py-2 border-b border-white/10 ">Verein</a>
+    <a href="strecke.html" class="block py-2 border-b border-white/10 ">Strecke</a>
+    <a href="stationen.html" class="block py-2 border-b border-white/10 ">Stationen</a>
     <a href="mediathek.html" class="block py-2 border-b border-white/10 ">Mediathek</a>
     <a href="presse.html" class="block py-2 border-b border-white/10 ">Presse</a>
-    <a href="verein.html" class="block py-2 border-b border-white/10 ">Verein</a>
+    <a href="geschichte.html" class="block py-2 border-b border-white/10 ">Geschichte</a>
     <a href="kontakt.html" class="block py-2 border-b border-white/10 ">Kontakt</a>
   </nav>
 </header>
@@ -64,7 +64,7 @@
 <div id="statusBanner" class="bg-[#FCEFCB] border-b border-[#E9B44C]/50" role="status">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center gap-3 text-sm">
     <span class="inline-flex items-center gap-2 font-semibold text-[#8A5A00]" id="statusKurzSpan">
-      <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" id="statusDot" class="status-dot"/></svg>
+      <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" id="statusDot" fill="#E9A400"/></svg>
       <span id="statusKurztext">Status: Eingeschränkter Betrieb</span>
     </span>
     <span class="text-[#5c4a1f]" id="statusLangtext">Bauarbeiten zwischen Dahn Süd und Bundenthal-Rumbach – Schienenersatzverkehr eingerichtet, gültig bis 04.10.2026.</span>
@@ -81,7 +81,7 @@
 
     <div class="rounded-2xl bg-[#FCEFCB] border border-[#E9B44C]/50 p-6 mb-10">
       <p class="font-semibold text-[#8A5A00] flex items-center gap-2 mb-2">
-        <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" class="status-dot"/></svg>
+        <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" fill="#E9A400"/></svg>
         Aktueller Status: Eingeschränkter Betrieb
       </p>
       <p class="text-sm text-[#5c4a1f]">
@@ -125,7 +125,7 @@
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">15.35 Uhr</td><td class="px-4 py-3">RB56 13634</td><td class="px-4 py-3">Moosbachtal 15.40 – Dahn 15.43 – Dahn Süd 15.46</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">16.22 Uhr</td><td class="px-4 py-3">RB56 13607</td><td class="px-4 py-3">Hinterweidenthal Ost 16.25</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">16.35 Uhr</td><td class="px-4 py-3">RB56 13636</td><td class="px-4 py-3">Moosbachtal 16.40 – Dahn 16.43 – Dahn Süd 16.46</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
-              <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">17.52 Uhr</td><td class="px-4 py-3">RB56 13609</td><td class="px-4 py-3">Annweiler am Trifels 18.20 – Landau (Pfalz) Hbf. 18.40 – Neustadt (Weinstr) Hbf. 19.10</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
+              <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">17.52 Uhr</td><td class="px-4 py-3">RB56 13609</td><td class="px-4 py-3">Hinterweidenthal Ost 17.55 – Annweiler am Trifels 18.20 – Landau (Pfalz) Hbf. 18.40 – Neustadt (Weinstr) Hbf. 19.10</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
             </tbody>
           </table>
         </div>
@@ -152,7 +152,7 @@
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">15.41 Uhr</td><td class="px-4 py-3">RB56 13634</td><td class="px-4 py-3">Dahn 15.43 – Dahn Süd 15.46</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">16.17 Uhr</td><td class="px-4 py-3">RB56 13607</td><td class="px-4 py-3">Hinterweidenthal Ort 16.22 – Hinterweidenthal Ost 16.25</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">16.41 Uhr</td><td class="px-4 py-3">RB56 13636</td><td class="px-4 py-3">Dahn 16.43 – Dahn Süd 16.46</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
-              <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">17.47 Uhr</td><td class="px-4 py-3">RB56 13609</td><td class="px-4 py-3">Hinterweidenthal Ort 17.52 – Annweiler am Trifels 18.20 – Landau (Pfalz) Hbf. 18.40 – Neustadt (Weinstr) Hbf. 19.10</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
+              <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">17.47 Uhr</td><td class="px-4 py-3">RB56 13609</td><td class="px-4 py-3">Hinterweidenthal Ort 17.52 – Hinterweidenthal Ost 17.55 – Annweiler am Trifels 18.20 – Landau (Pfalz) Hbf. 18.40 – Neustadt (Weinstr) Hbf. 19.10</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
             </tbody>
           </table>
         </div>
@@ -178,7 +178,7 @@
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">15.44 Uhr</td><td class="px-4 py-3">RB56 13634</td><td class="px-4 py-3">Dahn Süd 15.46</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">16.14 Uhr</td><td class="px-4 py-3">RB56 13607</td><td class="px-4 py-3">Moosbachtal 16.16 – Hinterweidenthal Ort 16.22 – Hinterweidenthal Ost 16.25</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">16.44 Uhr</td><td class="px-4 py-3">RB56 13636</td><td class="px-4 py-3">Dahn Süd 16.46</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
-              <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">17.44 Uhr</td><td class="px-4 py-3">RB56 13609</td><td class="px-4 py-3">Moosbachtal 17.46 – Hinterweidenthal Ort 17.52 – Annweiler am Trifels 18.20 – Landau (Pfalz) Hbf. 18.40 – Neustadt (Weinstr) Hbf. 19.10</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
+              <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">17.44 Uhr</td><td class="px-4 py-3">RB56 13609</td><td class="px-4 py-3">Moosbachtal 17.46 – Hinterweidenthal Ort 17.52 – Hinterweidenthal Ost 17.55 – Annweiler am Trifels 18.20 – Landau (Pfalz) Hbf. 18.40 – Neustadt (Weinstr) Hbf. 19.10</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
             </tbody>
           </table>
         </div>
@@ -197,7 +197,7 @@
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">14.11 Uhr</td><td class="px-4 py-3">RB56 13521</td><td class="px-4 py-3">Dahn 14.13 – Moosbachtal 14.16 – Hinterweidenthal Ort 14.22 – Hinterweidenthal Ost 14.25</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">15.11 Uhr</td><td class="px-4 py-3">RB56 13541</td><td class="px-4 py-3">Dahn 15.13 – Moosbachtal 15.16 – Hinterweidenthal Ort 15.22 – Hinterweidenthal Ost 15.25</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
               <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">16.11 Uhr</td><td class="px-4 py-3">RB56 13607</td><td class="px-4 py-3">Dahn 16.13 – Moosbachtal 16.16 – Hinterweidenthal Ort 16.22 – Hinterweidenthal Ost 16.25</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
-              <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">17.41 Uhr</td><td class="px-4 py-3">RB56 13609</td><td class="px-4 py-3">Dahn 17.43 – Moosbachtal 17.46 – Hinterweidenthal Ort 17.52 – Annweiler am Trifels 18.20 – Landau (Pfalz) Hbf. 18.40 – Neustadt (Weinstr) Hbf. 19.10</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
+              <tr class="odd:bg-[#F2EEE1]"><td class="px-4 py-3 font-semibold">17.41 Uhr</td><td class="px-4 py-3">RB56 13609</td><td class="px-4 py-3">Dahn 17.43 – Moosbachtal 17.46 – Hinterweidenthal Ort 17.52 – Hinterweidenthal Ost 17.55 – Annweiler am Trifels 18.20 – Landau (Pfalz) Hbf. 18.40 – Neustadt (Weinstr) Hbf. 19.10</td><td class="px-4 py-3 text-[#5b6b5f]">nur 27.06.–16.08.2026</td></tr>
             </tbody>
           </table>
         </div>
@@ -232,7 +232,7 @@
     <div>
       <p class="font-semibold text-white mb-3">Entdecken</p>
       <ul class="space-y-2">
-        <li><a href="die-strecke.html" class="hover:text-white">Die Strecke</a></li>
+        <li><a href="strecke.html" class="hover:text-white">Strecke</a></li>
         <li><a href="fahrplan.html" class="hover:text-white">Fahrplan</a></li>
         <li><a href="geschichte.html" class="hover:text-white">Geschichte</a></li>
         <li><a href="mediathek.html" class="hover:text-white">Mediathek</a></li>
